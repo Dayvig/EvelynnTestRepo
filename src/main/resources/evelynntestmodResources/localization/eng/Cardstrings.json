@@ -112,5 +112,59 @@
   "${ModID}:Hatred": {
     "NAME": "Hatred",
     "DESCRIPTION": "Gain !M! *Hate *Spikes."
+  },
+  "${ModID}:EnticeDominate": {
+    "NAME": "Enticing Presence",
+    "DESCRIPTION": "Innate. Shifting. NL Apply !M! Weak to ALL enemies. NL Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      "Dominating Presence",
+      "Innate. Shifting. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust.",
+      "Innate. Shifting. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust."
+    ]
+  },
+  "${ModID}:KissSuck": {
+    "NAME": "Sweet Kiss",
+    "DESCRIPTION": "Shifting. NL Heal enemy for !M!. NL Apply !M! Charm.",
+    "EXTENDED_DESCRIPTION": [
+      "Soul Suck",
+      "Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!.",
+      "Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!."
+    ]
+  },
+  "${ModID}:StrutStomp": {
+    "NAME": "Strut",
+    "DESCRIPTION": "Shifting. NL Gain !B! Block. NL When you fully block an attack this turn, apply !M! Charm to the attacker.",
+    "EXTENDED_DESCRIPTION": [
+      "Heel Stomp",
+      "Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card.",
+      "Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card."
+    ]
+  },
+  "${ModID}:EveningGloves": {
+    "NAME": "Evening Gloves",
+    "DESCRIPTION": "Accessory. NL When you apply Charm, gain !M! Block."
+  },
+  "${ModID}:SampleSummonGremlinCard": {
+    "NAME": "Summon Gremlins",
+    "DESCRIPTION": "Summon a guy."
+  },
+  "${ModID}:GownVeil": {
+    "NAME": "Evening Gown",
+    "DESCRIPTION": "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL When you draw a status card, gain [E] [E] and draw a card. NL When entering Demonic, becomes Shadow Veil.",
+    "UPGRADE_DESCRIPTION": "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL When you draw a status card, gain [E] [E] and draw !${ModID}:m2! cards. NL When entering Demonic, becomes Shadow Veil.",
+    "EXTENDED_DESCRIPTION": [
+      "Shadow Veil",
+      "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL Exhausting a status card deals !M! damage to ALL enemies. NL When exiting Demonic, becomes Evening Gown.",
+      "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL Exhausting a status card deals !M! damage to ALL enemies. NL When exiting Demonic, becomes Evening Gown."
+    ]
+  },
+  "${ModID}:PullHold": {
+    "NAME": "Pull Close",
+    "DESCRIPTION": "Shifting. NL Apply !M! Charm. NL Gain !${ModID}:m2! Vigor.",
+    "EXTENDED_DESCRIPTION": [
+      "Hold Down",
+      "Shifting. NL Enemy loses !M! Strength this turn only. NL Fetch a random Attack from your draw pile.",
+      "Shifting. NL Enemy loses !M! Strength this turn only. NL Fetch an Attack from your draw pile."
+    ]
   }
 }

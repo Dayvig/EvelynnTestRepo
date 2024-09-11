@@ -6,27 +6,27 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class Outfit extends AbstractEasyPower {
+public class Accessory extends AbstractEasyPower {
 
-    AbstractCard outfitCard;
+    AbstractCard accessoryCard;
 
-    public Outfit(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount, AbstractCard outfit) {
+    public Accessory(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount, AbstractCard outfit) {
         super(NAME, powerType, isTurnBased, owner, amount);
-        outfitCard = outfit;
+        accessoryCard = outfit;
     }
 
     @Override
     public void onInitialApplication(){
-        outfitCard.updateCost(-1);
+        accessoryCard.updateCost(-1);
     }
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power instanceof Outfit){
+        if (power instanceof Accessory){
             if (!power.ID.equals(this.ID)){
                 addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
-            addToBot(new MakeTempCardInDrawPileAction(outfitCard, 1, true, false, false));
+            addToBot(new MakeTempCardInDrawPileAction(accessoryCard, 1, true, false, false));
         }
     }
 

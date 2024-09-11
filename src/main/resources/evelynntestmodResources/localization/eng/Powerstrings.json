@@ -25,5 +25,26 @@
     "DESCRIPTIONS": [
       "When charm exceeds HP, this enemy fights for you."
     ]
+  },
+  "${ModID}:EveningGlovesPower": {
+    "NAME": "Evening Gloves",
+    "DESCRIPTIONS": [
+      "When you apply Charm, gain #b",
+      " Block. NL Playing a new Accessory will remove this power and add a #yEvening #yGloves to your draw pile and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:GownPower": {
+    "NAME": "Evening Gown",
+    "DESCRIPTIONS": [
+      "When you draw a status, gain [E] [E] and draw ",
+      " cards. Transforms into Shadow Veil when entering Demonic."
+    ]
+  },
+  "${ModID}:VeilPower": {
+    "NAME": "Shadow Veil",
+    "DESCRIPTIONS": [
+      "When you Exhaust a Status, deal ",
+      " damage to all enemies. Transforms into Evening Gown when exiting Demoic."
+    ]
   }
 }
