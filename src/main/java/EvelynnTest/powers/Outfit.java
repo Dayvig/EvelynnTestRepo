@@ -1,5 +1,7 @@
 package EvelynnTest.powers;
 
+import EvelynnTest.cards.Fashionista;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -17,7 +19,12 @@ public class Outfit extends AbstractEasyPower {
 
     @Override
     public void onInitialApplication(){
-        outfitCard.updateCost(-1);
+        if (this.owner.hasPower(FashionistaPower.POWER_ID)){
+            outfitCard.updateCost(1);
+        }
+        else {
+            outfitCard.updateCost(-1);
+        }
     }
 
     @Override
@@ -26,7 +33,7 @@ public class Outfit extends AbstractEasyPower {
             if (!power.ID.equals(this.ID)){
                 addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
-            addToBot(new MakeTempCardInDrawPileAction(outfitCard, 1, true, false, false));
+            addToBot(new MakeTempCardInDiscardAction(outfitCard, 1));
         }
     }
 
@@ -37,5 +44,7 @@ public class Outfit extends AbstractEasyPower {
             this.amount = Math.max(stackAmount, this.amount);
         }
     }
+
+    public void activateWhenFullyCharmed(){};
 
 }

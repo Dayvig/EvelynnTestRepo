@@ -1,5 +1,6 @@
 package EvelynnTest.cards;
 
+import EvelynnTest.powers.AllurePower;
 import EvelynnTest.powers.CharmPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
@@ -8,6 +9,7 @@ import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.MinionPower;
 import com.megacrit.cardcrawl.vfx.combat.HemokinesisEffect;
@@ -23,6 +25,7 @@ public class KissSuck extends AbstractShiftingCard {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
+        this.baseSecondMagic = secondMagic = MAGIC;
     }
 
     public KissSuck(boolean isCopy){
@@ -38,7 +41,7 @@ public class KissSuck extends AbstractShiftingCard {
     @Override
     public void useNormal(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new CharmPower(abstractMonster, magicNumber), magicNumber));
-        addToBot(new HealAction(abstractMonster, abstractPlayer, magicNumber));
+        addToBot(new HealAction(abstractMonster, abstractPlayer, secondMagic));
     }
 
     @Override
@@ -49,12 +52,22 @@ public class KissSuck extends AbstractShiftingCard {
                 addToBot(new VFXAction(new HemokinesisEffect(abstractMonster.hb.cX, abstractMonster.hb.cY, abstractPlayer.hb.cX, abstractPlayer.hb.cY)));
                 addToBot(new WaitAction(0.5f));
                 if (abstractMonster.currentHealth <= magicNumber && !abstractMonster.hasPower(MinionPower.POWER_ID)){
-                    addToBot(new HealAction(abstractPlayer, abstractPlayer, magicNumber));
+                    addToBot(new HealAction(abstractPlayer, abstractPlayer, secondMagic));
                 }
-                addToBot(new LoseHPAction(abstractMonster, abstractMonster, magicNumber));
+                addToBot(new LoseHPAction(abstractMonster, abstractMonster, secondMagic));
                 isDone = true;
             }
         });
+    }
+
+    @Override
+    public void applyPowers(){
+        super.applyPowers();
+        this.magicNumber = baseMagicNumber;
+        if (AbstractDungeon.player.hasPower(AllurePower.POWER_ID)){
+            this.magicNumber += AbstractDungeon.player.getPower(AllurePower.POWER_ID).amount;
+        }
+        this.isMagicNumberModified = AbstractDungeon.player.hasPower(AllurePower.POWER_ID);
     }
 
     @Override
@@ -63,7 +76,9 @@ public class KissSuck extends AbstractShiftingCard {
     }
 
     public void upp() {
+        super.upp();
         upgradeMagicNumber(UPG_MAGIC);
+        upgradeSecondMagic(UPG_MAGIC);
         initializeDescription();
     }
 }

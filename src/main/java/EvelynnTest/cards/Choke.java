@@ -87,6 +87,7 @@ public class Choke extends AbstractShiftingCard {
     }
 
     public void upp() {
+        super.upp();
         upgradeMagicNumber(UPG_MAGIC);
         upgradeDamage(UPG_MAGIC);
         upgradeSecondDamage(UPG_MAGIC);

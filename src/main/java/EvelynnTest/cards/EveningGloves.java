@@ -1,5 +1,6 @@
 package EvelynnTest.cards;
 
+import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.powers.EveningGlovesPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -17,6 +18,7 @@ public class EveningGloves extends AbstractEasyCard {
     public EveningGloves() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
+        tags.add(EvelynnTestMod.CustomTags.ACCESSORY);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

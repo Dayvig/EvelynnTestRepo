@@ -22,7 +22,7 @@ public class Accessory extends AbstractEasyPower {
 
     @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power instanceof Accessory){
+        if (power instanceof Accessory && !owner.hasPower(AccessorizedPower.POWER_ID)){
             if (!power.ID.equals(this.ID)){
                 addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }

@@ -1,5 +1,6 @@
 package EvelynnTest.cards;
 
+import EvelynnTest.powers.AllurePower;
 import EvelynnTest.powers.CharmPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -59,11 +60,22 @@ public class FlirtWatch extends AbstractShiftingCard {
     }
 
     @Override
+    public void applyPowers(){
+        super.applyPowers();
+        this.magicNumber = baseMagicNumber;
+        if (AbstractDungeon.player.hasPower(AllurePower.POWER_ID)){
+            this.magicNumber += AbstractDungeon.player.getPower(AllurePower.POWER_ID).amount;
+        }
+        this.isMagicNumberModified = AbstractDungeon.player.hasPower(AllurePower.POWER_ID);
+    }
+
+    @Override
     public AbstractShiftingCard makeShiftingCopy() {
         return new FlirtWatch(true);
     }
 
     public void upp() {
+        super.upp();
         upgradeMagicNumber(UPG_MAGIC2);
         upgradeSecondMagic(UPG_MAGIC1);
         upgradeBlock(UPG_MAGIC2);

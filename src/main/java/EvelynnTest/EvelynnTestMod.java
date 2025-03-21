@@ -1,5 +1,7 @@
 package EvelynnTest;
 
+import EvelynnTest.powers.BlingPower;
+import EvelynnTest.powers.CharmPower;
 import basemod.AutoAdd;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
@@ -8,9 +10,14 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.Keyword;
+import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -28,7 +35,9 @@ public class EvelynnTestMod implements
         EditRelicsSubscriber,
         EditStringsSubscriber,
         EditKeywordsSubscriber,
-        EditCharactersSubscriber {
+        EditCharactersSubscriber,
+        OnPlayerLoseBlockSubscriber
+{
 
     public static final String modID = "evelynntestmod"; //TODO: Change this.
 
@@ -137,6 +146,26 @@ public class EvelynnTestMod implements
     }
 
     @Override
+    public int receiveOnPlayerLoseBlock(int i) {
+        System.out.println(i);
+        if (AbstractDungeon.player.hasPower(BlingPower.POWER_ID)){
+            int amount = AbstractDungeon.player.getPower(BlingPower.POWER_ID).amount;
+            System.out.println(i);
+            if (i <= amount){ return 0; }
+            else {
+                return i-amount;
+            }
+        }
+        return i;
+    }
+
+    public static class CustomTags
+    {
+        @SpireEnum public static AbstractCard.CardTags OUTFIT;
+        @SpireEnum public static AbstractCard.CardTags ACCESSORY;
+    }
+
+    @Override
     public void receiveEditKeywords() {
         Gson gson = new Gson();
         String json = Gdx.files.internal(modID + "Resources/localization/eng/Keywordstrings.json").readString(String.valueOf(StandardCharsets.UTF_8));
@@ -147,5 +176,29 @@ public class EvelynnTestMod implements
                 BaseMod.addKeyword(modID, keyword.PROPER_NAME, keyword.NAMES, keyword.DESCRIPTION);
             }
         }
+    }
+
+    public static boolean isInfatuated(AbstractMonster m){
+        return m.hasPower(CharmPower.POWER_ID) && m.getPower(CharmPower.POWER_ID).amount >= (m.currentHealth/2);
+    }
+
+    public static float[] getSmartPosition(float yPos) {
+        float offsetX = 0f;
+        float offsetY = yPos;
+
+        //finds nearest X position to the left of that y value
+        for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
+            System.out.println((mo.drawY) + "|" + offsetY);
+            if ((mo.drawY) >= offsetY){
+                offsetX = Math.min(((mo.drawX - (mo.hb.width/2) - ((float) Settings.WIDTH * 0.75F)) / Settings.scale), offsetX);
+            }
+        }
+
+        //if x position is in player area, repeat with higher Y position
+        if ((offsetX - (75f * Settings.scale) + (((float) Settings.WIDTH * 0.75F) / Settings.scale)) < (AbstractDungeon.player.drawX + (AbstractDungeon.player.hb.width * 2))){
+            return getSmartPosition(yPos + (100f * Settings.scale));
+        }
+
+        return new float[]{offsetX - (75f * Settings.scale), offsetY};
     }
 }

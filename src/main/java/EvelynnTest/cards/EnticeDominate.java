@@ -57,6 +57,7 @@ public class EnticeDominate extends AbstractShiftingCard {
     }
 
     public void upp() {
+        super.upp();
         upgradeMagicNumber(UPG_MAGIC);
         initializeDescription();
     }

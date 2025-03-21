@@ -1,5 +1,6 @@
 package EvelynnTest.cards;
 
+import EvelynnTest.powers.AllurePower;
 import EvelynnTest.powers.CharmPower;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -31,6 +32,7 @@ public class PullHold extends AbstractShiftingCard {
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseSecondMagic = secondMagic = MAGIC2;
+        this.baseThirdMagic = thirdMagic = MAGIC;
     }
 
     public PullHold(boolean isCopy){
@@ -38,6 +40,7 @@ public class PullHold extends AbstractShiftingCard {
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseSecondMagic = secondMagic = MAGIC2;
+        this.baseThirdMagic = thirdMagic = MAGIC;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -47,14 +50,14 @@ public class PullHold extends AbstractShiftingCard {
     @Override
     public void useNormal(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new CharmPower(abstractMonster, magicNumber), magicNumber));
-        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new VigorPower(abstractPlayer, secondMagic), secondMagic));
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new VigorPower(abstractPlayer, secondMagic), secondMagic));
     }
 
     @Override
     public void useDemon(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        this.addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new StrengthPower(abstractMonster, -this.magicNumber), -this.magicNumber));
+        this.addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new StrengthPower(abstractMonster, -this.thirdMagic), -this.thirdMagic));
         if (abstractMonster != null && !abstractMonster.hasPower("Artifact")) {
-            this.addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new GainStrengthPower(abstractMonster, this.magicNumber), this.magicNumber));
+            this.addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new GainStrengthPower(abstractMonster, this.thirdMagic), this.thirdMagic));
         }
         addToBot(new AbstractGameAction() {
             @Override
@@ -71,6 +74,16 @@ public class PullHold extends AbstractShiftingCard {
         });
     }
 
+    @Override
+    public void applyPowers(){
+        super.applyPowers();
+        this.magicNumber = baseMagicNumber;
+        if (AbstractDungeon.player.hasPower(AllurePower.POWER_ID)){
+            this.magicNumber += AbstractDungeon.player.getPower(AllurePower.POWER_ID).amount;
+        }
+        this.isMagicNumberModified = AbstractDungeon.player.hasPower(AllurePower.POWER_ID);
+    }
+
 
     @Override
     public AbstractShiftingCard makeShiftingCopy() {
@@ -78,7 +91,9 @@ public class PullHold extends AbstractShiftingCard {
     }
 
     public void upp() {
+        super.upp();
         upgradeSecondMagic(UPG_MAGIC);
+        upgradeThirdMagic(UPG_MAGIC);
         initializeDescription();
     }
 }

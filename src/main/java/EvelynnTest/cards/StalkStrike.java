@@ -26,6 +26,7 @@ public class StalkStrike extends AbstractShiftingCard {
         setDemonValues(1, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseBlock = block = BLOCK;
         this.baseDamage = damage = DAMAGE;
+        this.tags.add(CardTags.STRIKE);
     }
 
     public StalkStrike(boolean isCopy){
@@ -33,6 +34,7 @@ public class StalkStrike extends AbstractShiftingCard {
         setDemonValues(1, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseBlock = block = BLOCK;
         this.baseDamage = damage = DAMAGE;
+        this.tags.add(CardTags.STRIKE);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -73,6 +75,7 @@ public class StalkStrike extends AbstractShiftingCard {
     }
 
     public void upp() {
+        super.upp();
         upgradeDamage(UPG_DAMAGE);
         upgradeBlock(UPG_BLOCK);
         initializeDescription();

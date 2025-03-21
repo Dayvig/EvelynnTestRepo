@@ -51,38 +51,38 @@
   },
   "${ModID}:ChokeTear": {
     "NAME": "Choke",
-    "DESCRIPTION": "Shifting. NL When you play a card this turn, enemy loses !M! HP.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL When you play a card this turn, enemy loses !M! HP.",
     "EXTENDED_DESCRIPTION": [
       "Tear Throat",
-      "Shifting. NL Deal !D! damage. If this is the first Attack played this turn, deal !evelynntestmod:sd! damage instead.",
-      "Shifting. NL Deal !D! damage. If this is the first Attack played this turn, deal !evelynntestmod:sd! damage instead."
+      "evelynntestmod:Shifting. NL Deal !D! damage. If this is the first Attack played this turn, deal !evelynntestmod:sd! damage instead.",
+      "evelynntestmod:Shifting. NL Deal !D! damage. If this is the first Attack played this turn, deal !evelynntestmod:sd! damage instead."
     ]
   },
   "${ModID}:FlirtWatch": {
     "NAME": "Flirt",
-    "DESCRIPTION": "Shifting. NL Apply !M! Charm. NL Apply !evelynntestmod:m2! Weak.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm. NL Apply !evelynntestmod:m2! Weak.",
     "EXTENDED_DESCRIPTION": [
       "Watch from Afar",
-      "Shifting. NL Gain !B! Block. NL Gain !evelynntestmod:m2! Vigor.",
-      "Shifting. NL Gain !B! Block. NL Gain !evelynntestmod:m2! Vigor."
+      "evelynntestmod:Shifting. NL Gain !B! Block. NL Gain !evelynntestmod:m2! Vigor.",
+      "evelynntestmod:Shifting. NL Gain !B! Block. NL Gain !evelynntestmod:m2! Vigor."
     ]
   },
   "${ModID}:SlapHarder": {
     "NAME": "Playful Slap",
-    "DESCRIPTION": "Shifting. NL Deal !D! damage. NL Enemy loses !M! Strength this turn only.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage. NL Enemy loses !M! Strength this turn only.",
     "EXTENDED_DESCRIPTION": [
       "Harder Slaps",
-      "Shifting. NL Deal !evelynntestmod:sd! damage twice.",
-      "Shifting. NL Deal !evelynntestmod:sd! damage twice."
+      "evelynntestmod:Shifting. NL Deal !evelynntestmod:sd! damage twice.",
+      "evelynntestmod:Shifting. NL Deal !evelynntestmod:sd! damage twice."
     ]
   },
   "${ModID}:StalkStrike": {
     "NAME": "Stalk",
-    "DESCRIPTION": "Shifting. NL Gain !B! Block. NL Enter Demon Shade.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Gain !B! Block. NL Enter Demon Shade.",
     "EXTENDED_DESCRIPTION": [
       "Strike from Behind",
-      "Shifting. Deal !D! damage twice. NL This costs 1 more this combat. Resets to 1 when exiting Demon Shade.",
-      "Shifting. Deal !D! damage twice. NL This costs 1 more this combat. Resets to 1 when exiting Demon Shade."
+      "evelynntestmod:Shifting. Deal !D! damage twice. NL This costs 1 more this combat. Resets to 1 when exiting Demon Shade.",
+      "evelynntestmod:Shifting. Deal !D! damage twice. NL This costs 1 more this combat. Resets to 1 when exiting Demon Shade."
     ]
   },
   "${ModID}:TestShiftCard": {
@@ -93,9 +93,9 @@
     "NAME": "Fancy Dress",
     "DESCRIPTION": "Outfit. NL At the end of the turn, gain !M! Block for each debuffed enemy."
   },
-  "${ModID}:TestCharmCard": {
-    "NAME": "TestCharmCard",
-    "DESCRIPTION": "Charm an enemy,."
+  "${ModID}:CharmCard": {
+    "NAME": "CharmCard",
+    "DESCRIPTION": "Charm an enemy."
   },
   "${ModID}:SampleDemonShadeCard": {
     "NAME": "Demon Shade",
@@ -115,56 +115,302 @@
   },
   "${ModID}:EnticeDominate": {
     "NAME": "Enticing Presence",
-    "DESCRIPTION": "Innate. Shifting. NL Apply !M! Weak to ALL enemies. NL Exhaust.",
+    "DESCRIPTION": "Innate. evelynntestmod:Shifting. NL Apply !M! Weak to ALL enemies. NL Exhaust.",
     "EXTENDED_DESCRIPTION": [
       "Dominating Presence",
-      "Innate. Shifting. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust.",
-      "Innate. Shifting. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust."
+      "Innate. evelynntestmod:Shifting. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust.",
+      "Innate. evelynntestmod:Shifting. NL Apply !M! Vulnerable to ALL enemies. NL Exhaust."
     ]
   },
   "${ModID}:KissSuck": {
     "NAME": "Sweet Kiss",
-    "DESCRIPTION": "Shifting. NL Heal enemy for !M!. NL Apply !M! Charm.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Heal enemy for !M!. NL Apply !M! evelynntestmod:Charm.",
     "EXTENDED_DESCRIPTION": [
       "Soul Suck",
-      "Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!.",
-      "Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!."
+      "evelynntestmod:Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!.",
+      "evelynntestmod:Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!."
     ]
   },
   "${ModID}:StrutStomp": {
     "NAME": "Strut",
-    "DESCRIPTION": "Shifting. NL Gain !B! Block. NL When you fully block an attack this turn, apply !M! Charm to the attacker.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Gain !B! Block. NL When you fully block an attack this turn, apply !M! evelynntestmod:Charm to the attacker.",
     "EXTENDED_DESCRIPTION": [
       "Heel Stomp",
-      "Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card.",
-      "Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card."
+      "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card.",
+      "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card."
     ]
   },
   "${ModID}:EveningGloves": {
     "NAME": "Evening Gloves",
-    "DESCRIPTION": "Accessory. NL When you apply Charm, gain !M! Block."
+    "DESCRIPTION": "evelynntestmod:Accessory. NL When you apply evelynntestmod:Charm, gain !M! Block."
   },
-  "${ModID}:SampleSummonGremlinCard": {
-    "NAME": "Summon Gremlins",
-    "DESCRIPTION": "Summon a guy."
+  "${ModID}:FanaticalFollower": {
+    "NAME": "Fanatical Follower",
+    "DESCRIPTION": "Innate. NL Summon a random hostile Gremlin. NL Exhaust.",
+    "DESCRIPTION": "Innate. Retain. NL Summon a random hostile Gremlin. NL Exhaust."
   },
   "${ModID}:GownVeil": {
     "NAME": "Evening Gown",
-    "DESCRIPTION": "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL When you draw a status card, gain [E] [E] and draw a card. NL When entering Demonic, becomes Shadow Veil.",
-    "UPGRADE_DESCRIPTION": "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL When you draw a status card, gain [E] [E] and draw !${ModID}:m2! cards. NL When entering Demonic, becomes Shadow Veil.",
+    "DESCRIPTION": "evelynntestmod:Shifting. Outfit. NL Add 3 Voids to your draw pile. NL When you draw a status card, gain [E] [E] and draw a card. NL When entering Demonic, becomes Shadow Veil.",
+    "UPGRADE_DESCRIPTION": "evelynntestmod:Shifting. Outfit. NL Add 3 Voids to your draw pile. NL When you draw a status card, gain [E] [E] and draw !${ModID}:m2! cards. NL When entering Demonic, becomes Shadow Veil.",
     "EXTENDED_DESCRIPTION": [
       "Shadow Veil",
-      "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL Exhausting a status card deals !M! damage to ALL enemies. NL When exiting Demonic, becomes Evening Gown.",
-      "Shifting. Outfit. NL Add 3 Voids to your draw pile. NL Exhausting a status card deals !M! damage to ALL enemies. NL When exiting Demonic, becomes Evening Gown."
+      "evelynntestmod:Shifting. Outfit. NL Add 3 Voids to your draw pile. NL Exhausting a status card deals !M! damage to ALL enemies. NL When exiting Demonic, becomes Evening Gown.",
+      "evelynntestmod:Shifting. Outfit. NL Add 3 Voids to your draw pile. NL Exhausting a status card deals !M! damage to ALL enemies. NL When exiting Demonic, becomes Evening Gown."
     ]
   },
   "${ModID}:PullHold": {
     "NAME": "Pull Close",
-    "DESCRIPTION": "Shifting. NL Apply !M! Charm. NL Gain !${ModID}:m2! Vigor.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm. NL Gain !${ModID}:m2! Vigor.",
     "EXTENDED_DESCRIPTION": [
       "Hold Down",
-      "Shifting. NL Enemy loses !M! Strength this turn only. NL Fetch a random Attack from your draw pile.",
-      "Shifting. NL Enemy loses !M! Strength this turn only. NL Fetch an Attack from your draw pile."
+      "evelynntestmod:Shifting. NL Enemy loses !M! Strength this turn only. NL Fetch a random Attack from your draw pile.",
+      "evelynntestmod:Shifting. NL Enemy loses !M! Strength this turn only. NL Fetch an Attack from your draw pile."
+    ]
+  },
+  "${ModID}:BusinessCasual": {
+    "NAME": "Business Casual",
+    "DESCRIPTION": "Outfit. NL When you attack an enemy with 50% or less HP, apply !M! Weak.",
+    "UPGRADE_DESCRIPTION": "Outfit. NL Draw 2 cards. NL When you attack an enemy with 50% or less HP, apply !M! Weak."
+  },
+  "${ModID}:SadoMasochism": {
+    "NAME": "Invoke Sadism",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Gain !B! Block. NL Target enemy gains !M! Strength this turn only.",
+    "EXTENDED_DESCRIPTION": [
+      "Invoke Masochism",
+      "evelynntestmod:Shifting. NL Deal !D! damage. This damage increases evelynntestmod:Charm instead of reducing it.",
+      "evelynntestmod:Shifting. NL Deal !D! damage. This damage increases evelynntestmod:Charm instead of reducing it."
+    ]
+  },
+  "${ModID}:SeduceDebilitate": {
+    "NAME": "Seduce",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Remove all Vulnerable from an enemy and and apply !M! evelynntestmod:Mega-Vulnerable for every 5 stacks removed.",
+    "EXTENDED_DESCRIPTION": [
+      "Debilitate",
+      "evelynntestmod:Shifting. NL Remove all Weak from an enemy and and apply !M! evelynntestmod:Mega_Weak for every 5 stacks removed.",
+      "evelynntestmod:Shifting. NL Remove all Weak from an enemy and and apply !M! evelynntestmod:Mega_Weak for every 5 stacks removed."
+    ]
+  },
+  "${ModID}:TeaseRake": {
+    "NAME": "Tease",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Gain !B! Block. NL Apply !M! Vulnerable.",
+    "EXTENDED_DESCRIPTION": [
+      "Rake Claws",
+      "evelynntestmod:Shifting. NL Deal !D! Damage. Hits twice if the enemy is Vulnerable.",
+      "evelynntestmod:Shifting. NL Deal !D! Damage. Hits twice if the enemy is Vulnerable."
+    ]
+  },
+  "${ModID}:Whiplash": {
+    "NAME": "Whiplash",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage. NL Draw !M! cards.",
+    "EXTENDED_DESCRIPTION": [
+      "Empowered Whiplash",
+      "evelynntestmod:Shifting. NL Deal !evelynntestmod:sd! Damage. NL Draw !evelynntestmod:m2! cards. NL Shift this and exit your Stance.",
+      "evelynntestmod:Shifting. NL Deal !evelynntestmod:sd! Damage. NL Draw !evelynntestmod:m2! cards. NL Shift this and exit your Stance."
+    ]
+  },
+  "${ModID}:TheLook": {
+    "NAME": "The Look",
+    "DESCRIPTION": "When you apply evelynntestmod:Charm, also apply !M! Vulnerable."
+  },
+  "${ModID}:Accessorize": {
+    "NAME": "Accessorize!",
+    "DESCRIPTION": "You can have any number of Accessories.",
+    "UPGRADE_DESCRIPTION": "You can have any number of Accessories. NL Fetch an evelynntestmod:Accessory from your draw pile."
+  },
+  "${ModID}:QuickChange": {
+    "NAME": "Quick Change!",
+    "DESCRIPTION": "Fetch an evelynntestmod:Outfit or evelynntestmod:Accessory from your draw pile. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Fetch an evelynntestmod:Outfit or evelynntestmod:Accessory from your draw pile."
+  },
+  "${ModID}:SenseWeakness": {
+    "NAME": "Sense Weakness",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy intends to attack, apply !${ModID}:m2! Vulnerable to it.",
+    "EXTENDED_DESCRIPTION": [
+      "Play Nice",
+      "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm for each Attack played this turn.",
+      "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm for each Attack played this turn.",
+      "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm for each Attack played this turn. (",
+      " attacks.)",
+      "That enemy doesn't intend to attack. What a shame."
+    ]
+  },
+  "${ModID}:QueenRobe": {
+    "NAME": "Queen's Robe",
+    "DESCRIPTION": "Outfit. NL Charmed enemies gain !M! Strength. NL At the end of your turn, gain !M! Block for each Infatuated enemy."
+  },
+  "${ModID}:PainPleasure": {
+    "NAME": "Pain in Pleasure",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy is evelynntestmod:Infatuated, deal !D! damage and gain !B! Block.",
+    "EXTENDED_DESCRIPTION": [
+      "Pleasure in Pain",
+      "evelynntestmod:Shifting. NL Deal !D! Damage. NL Apply !M! evelynntestmod:Charm.",
+      "evelynntestmod:Shifting. NL Deal !D! Damage. NL Apply !M! evelynntestmod:Charm."
+    ]
+  },
+  "${ModID}:Playtime": {
+    "NAME": "Playtime is Over",
+    "DESCRIPTION": "Ethereal. NL Enter evelynntestmod:Demon_Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon_Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust."
+  },
+  "${ModID}:SpikedCollar": {
+    "NAME": "Spiked Collar",
+    "DESCRIPTION": "evelynntestmod:Accessory. NL When an enemy loses evelynntestmod:Charm, gain !M! Vigor."
+  },
+  "${ModID}:AttractAttention": {
+    "NAME": "Attract Attention",
+    "DESCRIPTION": "Gain !B! Block. NL Summon a hostile Gremlin. NL Apply !M! evelynntestmod:Charm to all enemies."
+  },
+  "${ModID}:Alluring": {
+    "NAME": "Alluring",
+    "DESCRIPTION": "Gain !M! evelynntestmod:Allure."
+  },
+  "${ModID}:DevilCostume": {
+    "NAME": "Devil Costume",
+    "DESCRIPTION": "evelynntestmod:Outfit. NL When you enter evelynntestmod:demon_shade, gain !M! Strength."
+  },
+  "${ModID}:BeautyRest": {
+    "NAME": "Beauty Rest",
+    "DESCRIPTION": "Gain !B! Block. NL Exit your Stance. NL End your turn."
+  },
+  "${ModID}:JustKidding": {
+    "NAME": "Just Kidding!",
+    "DESCRIPTION": "Gain !B! Block. NL Exit your Stance."
+  },
+  "${ModID}:Shower": {
+    "NAME": "Cleansing Shower",
+    "DESCRIPTION": "Exhaust up to 3 cards. NL Apply !M! evelynntestmod:Charm to all enemies."
+  },
+  "${ModID}:Wardrobe": {
+    "NAME": "Wardrobe",
+    "DESCRIPTION": "At the end of your turn, retain your evelynntestmod:Outfits and evelynntestmod:Accessories and reduce the cost of the leftmost one by 1.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the end of your turn, retain your evelynntestmod:Outfits and evelynntestmod:Accessories and reduce the cost of the leftmost one by 1."
+  },
+  "${ModID}:Intimidate": {
+    "NAME": "Intimidate",
+    "DESCRIPTION": "Apply !M! Weak. NL Exhaust."
+  },
+  "${ModID}:Unpredictability": {
+    "NAME": "Unpredictability",
+    "DESCRIPTION": "Gain !B! Block. NL evelynntestmod:Shift up to !M! cards."
+  },
+  "${ModID}:Harder": {
+    "NAME": "Harder!",
+    "DESCRIPTION": "Deal !D! Damage. NL Fetch an Attack from your draw pile."
+  },
+  "${ModID}:PlayCoy": {
+    "NAME": "Play Coy!",
+    "DESCRIPTION": "Gain !B! Block. NL Fetch a Skill from your draw pile."
+  },
+  "${ModID}:Dominate": {
+    "NAME": "Dominate",
+    "DESCRIPTION": "Deal !D! damage. Damage is increased by !M! for each stack of Weak and Vulnerable on the target."
+  },
+  "${ModID}:Aftercare": {
+    "NAME": "Aftercare",
+    "DESCRIPTION": "Heal an enemy for !M!. NL Gain !B! Block."
+  },
+  "${ModID}:BigFan": {
+    "NAME": "Big Fan",
+    "DESCRIPTION": "Summon a hostile Gremlin Nob with !M! HP. NL Exhaust."
+  },
+  "${ModID}:Bling": {
+    "NAME": "Bling",
+    "DESCRIPTION": "evelynntestmod:Accessory. NL Gain !B! Block. NL At the end of your turn, keep up to !M! unused Block."
+  },
+  "${ModID}:RitualRobe": {
+    "NAME": "Blood Moon Robe",
+    "DESCRIPTION": "evelynntestmod:Outfit. NL The first three attacks played heal you for !M! HP."
+  },
+  "${ModID}:MarkEviscerate": {
+    "NAME": "Love Marks",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage twice. NL Apply !M! evelynntestmod:Charm.",
+    "EXTENDED_DESCRIPTION": [
+      "Eviscerate",
+      "evelynntestmod:Shifting. NL Deal !${ModID}:sd! Damage !${ModID}:m2! times.",
+      "evelynntestmod:Shifting. NL Deal !${ModID}:sd! Damage !${ModID}:m2! times."
+    ]
+  },
+  "${ModID}:RidingCrop": {
+    "NAME": "Riding Crop",
+    "DESCRIPTION": "evelynntestmod:Accessory. NL When you receive attack damage or a debuff, gain !M! *Hate *Spikes.",
+    "UPGRADE_DESCRIPTION": "evelynntestmod:Accessory. NL When you receive attack damage or a debuff, gain !M! *Hate *Spikes."
+  },
+  "${ModID}:Fervor": {
+    "NAME": "Rising Fervor",
+    "DESCRIPTION": "Deal !D! damage. NL After you play an Attack this turn, gain !M! Strength this turn only."
+  },
+  "${ModID}:LastCaress": {
+    "NAME": "Last Caress",
+    "DESCRIPTION": "Deal !D! damage. Damage is doubled if enemy is evelynntestmod:Infatuated. Damage is doubled if enemy is at 50% or less HP."
+  },
+  "${ModID}:Resentment": {
+    "NAME": "Resentment",
+    "DESCRIPTION": "Whenever you apply Charm to target enemy, gain a *Hate *Spike with Retain. NL Exhaust."
+  },
+  "${ModID}:SharpStilettos": {
+    "NAME": "Sharp Stilettos",
+    "DESCRIPTION": "evelynntestmod:Accessory. NL *Hate *Spikes deal double damage.",
+    "UPGRADE_DESCRIPTION": "evelynntestmod:Accessory. NL *Hate *Spikes deal double damage. NL Gain a *Hate *Spike."
+  },
+  "${ModID}:Torment": {
+    "NAME": "Torment",
+    "DESCRIPTION": "Deal !D! damage !M! times. NL Heal enemy for !evelynntestmod:m2!."
+  },
+  "${ModID}:FemmeFatale": {
+    "NAME": "FemmeFatale",
+    "DESCRIPTION": "Lorem Ipsum"
+  },
+    "${ModID}:SaloonGarb": {
+      "NAME": "High Noon Attire",
+      "DESCRIPTION": "evelynntestmod:Outfit. NL The first !M! times you apply a debuff with this outfit on, gain #b1 Strength."
+  },
+  "${ModID}:PopstarOutfit": {
+    "NAME": "Pop Star Outfit",
+    "DESCRIPTION": "evelynntestmod:Outfit. NL When you play a skill, apply !M! evelynntestmod:Charm to a random enemy."
+  },
+  "${ModID}:ExtraPadding": {
+    "NAME": "Extra Padding",
+    "DESCRIPTION": "Gain !B! Block. NL When you play a Power, add this from your discard pile to your hand."
+  },
+  "${ModID}:MasqueradeCostume": {
+    "NAME": "Masquerade Costume",
+    "DESCRIPTION": "At the start of your turn, add a random Power from your draw pile to your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of your turn, add a random Power from your draw pile to your hand."
+  },
+  "${ModID}:Fashionista": {
+    "NAME": "Fashionista",
+    "DESCRIPTION": "When you play a Power card, gain !M! Dexterity. NL Replaced Outfits or accessories cost 1 more instead of 1 less."
+  },
+  "${ModID}:DemonShade": {
+    "NAME": "Demon Shade",
+    "DESCRIPTION": "Enter ${ModID}:Demon_Shade."
+  },
+  "${ModID}:CoolShades": {
+    "NAME": "Cool Shades",
+    "DESCRIPTION": "${ModID}:Accessory. NL Gain ${ModID}:Allure equal to your combined Strength and Vigor.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Accessory. NL Gain ${ModID}:Allure equal to your combined Strength and Vigor. NL Gain [E] [E]."
+  },
+  "${ModID}:RetractableClaws": {
+    "NAME": "Retractable Claws",
+    "DESCRIPTION": "${ModID}:Accessory. NL Now and at the start of your turn, ${ModID}:Shift any number of cards in your hand."
+  },
+  "${ModID}:MoodSwing": {
+    "NAME": "Mood Swing",
+    "DESCRIPTION": "Draw a card. NL Randomly ${ModID}:Shift a card in your hand.",
+    "UPGRADE_DESCRIPTION": "Draw a card. NL ${ModID}:Shift a card in your hand."
+  },
+  "${ModID}:Abuse": {
+    "NAME": "Abuse",
+    "DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL If the enemy had 50% or less HP, gain [E].",
+    "UPGRADE_DESCRIPTION": "Deal !D! damage. NL Gain !B! Block. NL If the enemy had 50% or less HP, gain [E] [E]."
+  },
+  "${ModID}:Heartbreaker": {
+    "NAME": "Heartbreaker",
+    "DESCRIPTION": "Deal damage equal to double an enemy's ${ModID}:Charm.",
+    "EXTENDED_DESCRIPTION": [
+      " NL ( ",
+      " Damage.)"
     ]
   }
 }

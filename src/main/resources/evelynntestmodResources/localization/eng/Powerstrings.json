@@ -11,7 +11,7 @@
     "NAME": "Fancy Dress",
     "DESCRIPTIONS": [
       "At the end of the turn, gain ",
-      " block for each debuffed enemy. NL Playing a new Outfit will remove this power and add a #yFancy #yDress to your draw pile and reduce its cost by 1."
+      " block for each debuffed enemy. NL Playing a new Outfit will remove this power and add a #yFancy #yDress to your discard pile and reduce its cost by 1."
     ]
   },
   "${ModID}:MindControlledPower": {
@@ -20,17 +20,11 @@
       "Fights for you"
     ]
   },
-  "${ModID}:CharmPower": {
-    "NAME": "Charm",
-    "DESCRIPTIONS": [
-      "When charm exceeds HP, this enemy fights for you."
-    ]
-  },
   "${ModID}:EveningGlovesPower": {
     "NAME": "Evening Gloves",
     "DESCRIPTIONS": [
       "When you apply Charm, gain #b",
-      " Block. NL Playing a new Accessory will remove this power and add a #yEvening #yGloves to your draw pile and reduce its cost by 1."
+      " Block. NL Playing a new Accessory will remove this power and add a #yEvening #yGloves to your discard pile and reduce its cost by 1."
     ]
   },
   "${ModID}:GownPower": {
@@ -45,6 +39,183 @@
     "DESCRIPTIONS": [
       "When you Exhaust a Status, deal ",
       " damage to all enemies. Transforms into Evening Gown when exiting Demoic."
+    ]
+  },
+  "${ModID}:MegaVulnerable": {
+    "NAME": "Mega-Vulnerable",
+    "DESCRIPTIONS": [
+      "Receive #b",
+      "% more damage from #yAttacks for #b",
+      " turn.",
+      " turns.",
+      " (Enhanced by Paper Frog)"
+    ]
+  },
+  "${ModID}:MegaWeak": {
+    "NAME": "Mega-Weak",
+    "DESCRIPTIONS": [
+      "#yAttacks deal #b",
+      "% less damage for #b",
+      " turn.",
+      " turns.",
+      " (Enhanced by Paper Crane)"
+    ]
+  },
+  "${ModID}:TheLookPower": {
+    "NAME": "The Look",
+    "DESCRIPTIONS": [
+      "When you apply #bCharm, also apply ",
+      " #bVulnerable."
+    ]
+  },
+  "${ModID}:CharmPower": {
+    "NAME": "Charm",
+    "DESCRIPTIONS": [
+      "If Charm is equal to or greater than HP, fights for you. When taking Attack Damage, lose that much Charm."
+    ]
+  },
+  "${ModID}:AccessorizedPower": {
+    "NAME": "Accessorized!",
+    "DESCRIPTIONS": [
+      "You can have any number of #yAccessories."
+    ]
+  },
+  "${ModID}:BusinessCasualPower": {
+    "NAME": "Business Casual",
+    "DESCRIPTIONS": [
+      "When attacked while 50% or less HP, gain #b",
+      " weak."
+      ]
+  },
+  "${ModID}:QueenRobePower": {
+    "NAME": "Queen's Robe",
+    "DESCRIPTIONS": [
+      "Charmed enemies gain #b",
+      " Strength. NL At the end of your turn, gain #b",
+      " Block for each Infatuated enemy. NL Playing a new Outfit will remove this power and add a #yQueen's #yRobe to your discard pile and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:SpikedCollarPower": {
+    "NAME": "Spiked Collar",
+    "DESCRIPTIONS": [
+      "When an enemy loses Charm, gain #b",
+      " Vigor. NL Playing a new Accessory will remove this power and add a #ySpiked #yCollar to your discard pile and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:AllurePower": {
+    "NAME": "Charisma",
+    "DESCRIPTIONS": [
+      "Increases Charm gained from cards by #b",
+      "."
+    ]
+  },
+  "${ModID}:DevilCostumePower": {
+    "NAME": "Devil Costume",
+    "DESCRIPTIONS": [
+      "When you enter #yDemon #yShade, gain #b",
+      " #yStrength. NL Playing a new Outfit will remove this power and add a #yDevil #yCostume to your discard pile and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:WardrobePower": {
+    "NAME": "Wardrobe",
+    "DESCRIPTIONS": [
+      "At the end of the turn, Retain your #yOutfits and #yAccessories and reduce the cost of the leftmost one by #b",
+      "."
+    ]
+  },
+  "${ModID}:BlingPower": {
+    "NAME": "Bling",
+    "DESCRIPTIONS": [
+      "At the start of your turn, keep up to #b",
+      " unused Block. NL Playing a new Accessory will remove this power, add #yBling to your discard pile, and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:RitualRobePower": {
+    "NAME": "Blood Moon Robe",
+    "DESCRIPTIONS": [
+      "The next #b",
+      " Attacks played heal you for #b",
+      ". NL Playing a new Outfit will remove this power, add  #yRitual #yRobe to your discard pile, and reduce its cost by 1.",
+      "The robe's power is used up. Playing a new Outfit will remove this power, add #yRitual #yRobe to your discard pile, and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:PunishmentPower": {
+    "NAME": "Riding Crop",
+    "DESCRIPTIONS": [
+      "When receiving attack damage or a debuff, gain a #yHate #ySpike",
+      "When receiving attack damage or a debuff, gain #b",
+      " #yHate #ySpikes."
+    ]
+  },
+  "${ModID}:FervorPower": {
+    "NAME": "Rising Fervor",
+    "DESCRIPTIONS": [
+      "After playing an Attack this turn, gain #b",
+      " #yStrength."
+    ]
+  },
+  "${ModID}:GrudgePower": {
+    "NAME": "Grudge",
+    "DESCRIPTIONS": [
+      "When this enemy receives #yCharm, gain a #yHate #ySpike with Retain.",
+      "When this enemy receives #yCharm, gain #b",
+      " #yHate #ySpikes with Retain."
+    ]
+  },
+  "${ModID}:StilettoPower": {
+    "NAME": "Sharp Stilettos",
+    "DESCRIPTIONS": [
+      "#yHate #ySpikes deal double damage."
+    ]
+  },
+  "${ModID}:FemmeFatalePower": {
+    "NAME": "Femme Fatale Power",
+    "DESCRIPTIONS": [
+      "When dealing unblocked attack damage to a single enemy, apply #b",
+      " #yCharm to ALL other enemies. When an enemy is fully Charmed, gain #b",
+      " Block. Playing a new Outfit will remove this power, add #yFemme #yFatale to your discard pile, and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:SaloonGarbPower": {
+    "NAME": "High Noon Attire",
+    "DESCRIPTIONS": [
+      "Gain #b1 Strength after applying debuffs to enemies #b",
+      " times. Playing a new Outfit will remove this power, add #yHigh #yNoon #yAttire to your discard pile, and reduce its cost by 1.",
+      "The outfit's power is used up. Playing a new Outfit will remove this power, add #yHigh #yNoon #yAttire to your discard pile, and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:PopstarOutfitPower": {
+    "NAME": "Pop Star Outfit",
+    "DESCRIPTIONS": [
+      "After you play a #bSkill, a random enemy gains #b",
+      " #yCharm. Playing a new Outfit will remove this power, add #yPop #yStar #yOutfit to your discard pile, and reduce its cost by 1."
+    ]
+  },
+  "${ModID}:MasqueradePower": {
+    "NAME": "Masquerade Costume",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add a random #bPower from your draw pile to your hand. Playing a new Outfit will remove this power, add #yMasquerade #yCostume to your discard pile, and reduce its cost by 1.",
+      "At the start of your turn, add #b",
+      " random #bPowers from your draw pile to your hand. Playing a new Outfit will remove this power, add #yMasquerade #yCostume to your discard pile, and reduce its cost by 1."
+    ]
+  },
+    "${ModID}:FashionistaPower": {
+      "NAME": "Fashionista",
+      "DESCRIPTIONS": [
+        "When you play a #bPower, gain #b",
+        " Dexterity. Replaced #yOutfits and #yAccessories cost 1 more instead of 1 less."
+      ]
+  },
+  "${ModID}:CoolShadesPower": {
+    "NAME": "Cool Shades",
+    "DESCRIPTIONS": [
+      "Gain #yAllure equal to your combined #yStrength and #yVigor."
+    ]
+  },
+  "${ModID}:RetractableClawsPower": {
+    "NAME": "Retractable Claws",
+    "DESCRIPTIONS": [
+      "At the start of your turn, #yShift any number of cards in hand."
     ]
   }
 }

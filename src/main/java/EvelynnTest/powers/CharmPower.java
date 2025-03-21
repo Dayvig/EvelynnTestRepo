@@ -1,13 +1,19 @@
 package EvelynnTest.powers;
 
+import EvelynnTest.cards.HateSpike;
+import EvelynnTest.cards.SadoMasochism;
+import basemod.cardmods.RetainMod;
+import basemod.helpers.CardModifierManager;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import EvelynnTest.EvelynnTestMod;
 import com.megacrit.cardcrawl.powers.AbstractPower;
@@ -19,9 +25,10 @@ public class CharmPower extends AbstractEasyPower implements HealthBarRenderPowe
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String LOC_NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    HateSpike spike;
 
     public CharmPower(AbstractCreature owner, int amount) {
-        super(SIMPLE_NAME, PowerType.BUFF, false, owner, amount);
+        super(SIMPLE_NAME, PowerType.DEBUFF, false, owner, amount);
         name = LOC_NAME;
         updateDescription();
     }
@@ -37,11 +44,23 @@ public class CharmPower extends AbstractEasyPower implements HealthBarRenderPowe
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(CharmPower.POWER_ID) && (power.amount + owner.getPower(CharmPower.POWER_ID).amount) >= this.owner.currentHealth && !this.owner.hasPower(MindControlledPower.POWER_ID)){
             addToBot(new ApplyPowerAction(this.owner, this.owner, new MindControlledPower(this.owner)));
+            for (AbstractPower p : AbstractDungeon.player.powers){
+                if (p instanceof Outfit){
+                    Outfit out = (Outfit)p;
+                    out.activateWhenFullyCharmed();
+                }
+            }
         }
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (damageAmount > owner.currentBlock){
+        if (info instanceof SadoMasochism.SadisticDamageInfo){
+            SadoMasochism.SadisticDamageInfo sadisticInfo = (SadoMasochism.SadisticDamageInfo)info;
+            if (sadisticInfo.isSadistic){
+                return damageAmount;
+            }
+        }
+        if (damageAmount > owner.currentBlock && info.type.equals(DamageInfo.DamageType.NORMAL)){
             addToTop(new ReducePowerAction(this.owner, this.owner, this, damageAmount - owner.currentBlock));
         }
         return damageAmount;

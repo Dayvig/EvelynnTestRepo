@@ -31,7 +31,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
     public String demonName;
     public String originalName;
 
-    public AbstractCard previewCard;
+    public AbstractShiftingCard previewCard;
     boolean isCopy;
 
     public AbstractShiftingCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target) {
@@ -44,7 +44,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         }
         if (!isCopy) {
             previewCard = this.makeShiftingCopy();
-            ((AbstractShiftingCard) previewCard).Shift(false);
+            previewCard.Shift(false);
             this.cardsToPreview = previewCard;
         }
     }
@@ -85,6 +85,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
     }
 
     public abstract AbstractShiftingCard makeShiftingCopy();
+
     public void displayUpgrades() {
         super.displayUpgrades();
         if (upgradedThirdMagic) {
@@ -101,7 +102,12 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
 
     @Override
     public void upp() {
-
+        if (!isCopy) {
+            System.out.println(cardsToPreview.cardID);
+            System.out.println(this.isCopy);
+            cardsToPreview.upgrade();
+            upgradeCardToPreview();
+        }
     }
 
     @Override

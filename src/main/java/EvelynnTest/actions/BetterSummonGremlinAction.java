@@ -1,6 +1,7 @@
 
 package EvelynnTest.actions;
 
+import EvelynnTest.EvelynnTestMod;
 import com.badlogic.gdx.math.Interpolation;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
@@ -60,34 +61,14 @@ public class BetterSummonGremlinAction extends AbstractGameAction {
         pool.add("GremlinFat");
         pool.add("GremlinTsundere");
         pool.add("GremlinWizard");
-        float x = getSmartPosition(0f)[0];
-        float y = getSmartPosition(0f)[1];
+        float x = EvelynnTestMod.getSmartPosition(0f)[0];
+        float y = EvelynnTestMod.getSmartPosition(0f)[1];
 
         System.out.println("xPos "+x);
         System.out.println("yPos "+y);
 
 
         return MonsterHelper.getGremlin((String)pool.get(AbstractDungeon.aiRng.random(0, pool.size() - 1)), x, y);
-    }
-
-    private float[] getSmartPosition(float yPos) {
-        float offsetX = 0f;
-        float offsetY = yPos;
-
-        //finds nearest X position to the left of that y value
-        for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            System.out.println((mo.drawY) + "|" + offsetY);
-            if ((mo.drawY) >= offsetY){
-                offsetX = Math.min(((mo.drawX - (mo.hb.width/2) - ((float) Settings.WIDTH * 0.75F)) / Settings.scale), offsetX);
-            }
-        }
-
-        //if x position is in player area, repeat with higher Y position
-        if ((offsetX - (75f * Settings.scale) + (((float) Settings.WIDTH * 0.75F) / Settings.scale)) < (AbstractDungeon.player.drawX + (AbstractDungeon.player.hb.width * 2))){
-            return getSmartPosition(yPos + (100f * Settings.scale));
-        }
-
-        return new float[]{offsetX - (75f * Settings.scale), offsetY};
     }
 
     public boolean isGremlin(AbstractMonster monster){

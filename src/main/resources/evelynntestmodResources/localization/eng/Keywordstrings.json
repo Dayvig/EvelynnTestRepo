@@ -6,5 +6,98 @@
       "todos"
     ],
     "DESCRIPTION": "TODO: Make your own epic keywords"
+  },
+  {
+    "PROPER_NAME": "Mega Weak",
+    "NAMES": [
+      "mega-weak",
+      "mega weak",
+      "mega_weak"
+    ],
+    "DESCRIPTION": "Mega-Weakened creatures deal #b75% less damage with Attacks."
+  },
+  {
+    "PROPER_NAME": "Mega Vulnerable",
+    "NAMES": [
+      "mega-vulnerable",
+      "mega vulnerable",
+      "mega_vulnerable"
+    ],
+    "DESCRIPTION": "Mega-Vulnerable creatures take #b100% more damage from Attacks."
+  },
+  {
+    "PROPER_NAME": "Shifting",
+    "NAMES": [
+      "shifting"
+    ],
+    "DESCRIPTION": "Can shift into a demonic form."
+  },
+  {
+    "PROPER_NAME": "Charm",
+    "NAMES": [
+      "charm",
+      "charm"
+    ],
+    "DESCRIPTION": "If an enemy's Charm is greater than or equal to its HP, it fights for you and is removed from combat. When dealing attack damage, enemies lose that much Charm."
+  },
+  {
+    "PROPER_NAME": "Accessory",
+    "NAMES": [
+      "accessory",
+      "accessories"
+    ],
+    "DESCRIPTION": "Only one Accessory may be active at a time. Playing an Accessory removes the old one, reduces its cost by 1 and adds it to your draw pile."
+  },
+  {
+    "PROPER_NAME": "Outfit",
+    "NAMES": [
+      "outfit",
+      "outfits"
+    ],
+    "DESCRIPTION": "Only one outfit may be active at a time. Playing an outfit removes the old one, reduces its cost by 1 and adds it to your draw pile."
+  },
+  {
+    "PROPER_NAME": "Infatuated",
+    "NAMES": [
+      "infatuated",
+      "infatuate"
+    ],
+    "DESCRIPTION": "Has Charm equal to or more than half its current HP."
+  },
+  {
+    "PROPER_NAME": "Demon Shade",
+    "NAMES": [
+      "demon_shade",
+      "demonshade",
+      "demon shade",
+      "demonic"
+    ],
+    "DESCRIPTION": "When entering gain 4 Vigor and shift all cards everywhere into their demonic forms. When exiting, shift them all back."
+  },
+  {
+    "PROPER_NAME": "Demon Shade",
+    "NAMES": [
+      "demon_shade",
+      "demonshade",
+      "demon shade",
+      "demonic"
+    ],
+    "DESCRIPTION": "When entering gain 4 Vigor and shift all cards everywhere into their demonic forms. When exiting, shift them all back."
+  },
+  {
+    "PROPER_NAME": "Shift",
+    "NAMES": [
+      "shift",
+      "shifted"
+    ],
+    "DESCRIPTION": "Change a Shifting card into a new form."
+  },
+  {
+    "PROPER_NAME": "Grudge",
+    "NAMES": [
+      "grudge",
+      "grudges"
+    ],
+    "DESCRIPTION": "When receiving Charm, add a #yHate #ySpike to your hand with Retain."
   }
 ]

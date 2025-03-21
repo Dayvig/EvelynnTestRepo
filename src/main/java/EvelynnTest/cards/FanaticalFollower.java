@@ -11,8 +11,10 @@ public class FanaticalFollower extends AbstractEasyCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public FanaticalFollower() {
-        super(ID, 0, CardType.SKILL, CardRarity.BASIC, CardTarget.NONE);
+        super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = magicNumber = 1;
+        this.selfRetain = false;
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -20,5 +22,8 @@ public class FanaticalFollower extends AbstractEasyCard {
     }
 
     public void upp() {
+        this.selfRetain = true;
+        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 }

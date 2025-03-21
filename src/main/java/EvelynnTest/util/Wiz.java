@@ -106,7 +106,7 @@ public class Wiz {
         return getRandomItem(list, AbstractDungeon.cardRandomRng);
     }
 
-    private static boolean actuallyHovered(Hitbox hb) {
+    public static boolean actuallyHovered(Hitbox hb) {
         return InputHelper.mX > hb.x && InputHelper.mX < hb.x + hb.width && InputHelper.mY > hb.y && InputHelper.mY < hb.y + hb.height;
     }
 

@@ -74,6 +74,7 @@ public class StrutStomp extends AbstractShiftingCard {
     }
 
     public void upp() {
+        super.upp();
         upgradeMagicNumber(UPG_MAGIC);
         upgradeBlock(UPG_BLOCK_DMG);
         upgradeDamage(UPG_BLOCK_DMG);

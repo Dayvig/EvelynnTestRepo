@@ -29,7 +29,11 @@ public class StrutPower extends AbstractEasyPower {
     public int onAttacked(DamageInfo info, int damageAmount) {
         if (info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != this.owner && damageAmount <= this.owner.currentBlock) {
             this.flash();
-            this.addToTop(new ApplyPowerAction(info.owner, this.owner, new CharmPower(info.owner, this.amount), this.amount));
+            int toApply = this.amount;
+            if (owner.hasPower(AllurePower.POWER_ID)){
+                toApply += owner.getPower(AllurePower.POWER_ID).amount;
+            }
+            this.addToTop(new ApplyPowerAction(info.owner, this.owner, new CharmPower(info.owner, toApply), toApply));
         }
 
         return damageAmount;
