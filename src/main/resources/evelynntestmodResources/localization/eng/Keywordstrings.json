@@ -46,7 +46,7 @@
       "accessory",
       "accessories"
     ],
-    "DESCRIPTION": "Only one Accessory may be active at a time. Playing an Accessory removes the old one, reduces its cost by 1 and adds it to your draw pile."
+    "DESCRIPTION": "Only one Accessory may be active at a time. Playing an Accessory removes the old one, reduces its cost by 1 and adds it to your discard pile."
   },
   {
     "PROPER_NAME": "Outfit",
@@ -54,7 +54,7 @@
       "outfit",
       "outfits"
     ],
-    "DESCRIPTION": "Only one outfit may be active at a time. Playing an outfit removes the old one, reduces its cost by 1 and adds it to your draw pile."
+    "DESCRIPTION": "Only one outfit may be active at a time. Playing an outfit removes the old one, reduces its cost by 1 and adds it to your discard pile."
   },
   {
     "PROPER_NAME": "Infatuated",
@@ -65,22 +65,12 @@
     "DESCRIPTION": "Has Charm equal to or more than half its current HP."
   },
   {
-    "PROPER_NAME": "Demon Shade",
+    "PROPER_NAME": "Demon\u00a0Shade",
     "NAMES": [
+      "demon\u00a0shade",
+      "Demon\u00a0Shade",
       "demon_shade",
-      "demonshade",
-      "demon shade",
-      "demonic"
-    ],
-    "DESCRIPTION": "When entering gain 4 Vigor and shift all cards everywhere into their demonic forms. When exiting, shift them all back."
-  },
-  {
-    "PROPER_NAME": "Demon Shade",
-    "NAMES": [
-      "demon_shade",
-      "demonshade",
-      "demon shade",
-      "demonic"
+      "demonshade"
     ],
     "DESCRIPTION": "When entering gain 4 Vigor and shift all cards everywhere into their demonic forms. When exiting, shift them all back."
   },
@@ -99,5 +89,13 @@
       "grudges"
     ],
     "DESCRIPTION": "When receiving Charm, add a #yHate #ySpike to your hand with Retain."
+  },
+  {
+    "PROPER_NAME": "Charisma",
+    "NAMES": [
+      "charisma",
+      "charisma"
+    ],
+    "DESCRIPTION": "Increases Charm applied by cards."
   }
 ]

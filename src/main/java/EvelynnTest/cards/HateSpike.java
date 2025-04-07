@@ -32,6 +32,9 @@ public class HateSpike extends AbstractEasyCard {
     public void calculateCardDamage(AbstractMonster mo){
         super.calculateCardDamage(mo);
         if (AbstractDungeon.player.hasPower(StilettoPower.POWER_ID)){
+            for (int i=0;i<multiDamage.length-1;i++){
+                multiDamage[i] *= 2;
+            }
             damage *= 2;
             isDamageModified = true;
         }
@@ -41,7 +44,7 @@ public class HateSpike extends AbstractEasyCard {
     public void applyPowers(){
         super.applyPowers();
         if (AbstractDungeon.player.hasPower(StilettoPower.POWER_ID)){
-            System.out.println("test");
+
             damage *= 2;
             isDamageModified = true;
         }

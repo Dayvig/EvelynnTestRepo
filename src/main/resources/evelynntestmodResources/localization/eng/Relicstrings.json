@@ -1,9 +1,9 @@
 {
-  "${ModID}:TodoItem": {
-    "NAME": "Todo Item",
-    "FLAVOR": "TODO: make this a sweet relic.",
+  "${ModID}:Hunger": {
+    "NAME": "Endless Hunger",
+    "FLAVOR": "Once I was overwhelmed by the agony. Now I can't get enough.",
     "DESCRIPTIONS": [
-      "Has no effect."
+      "When you deal attack damage, gain 1 Agony, doubled for enemies at 50% HP or below. NL For every 10 Agony, gain 1 Strength and Dexterity (Max 3.)"
     ]
   }
 }

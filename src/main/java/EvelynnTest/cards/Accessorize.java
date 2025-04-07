@@ -18,8 +18,7 @@ public class Accessorize extends AbstractEasyCard {
     // intellij stuff skill, self, basic, , ,  5, 3, ,
 
     public Accessorize() {
-        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        baseBlock = 5;
+        super(ID, 0, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

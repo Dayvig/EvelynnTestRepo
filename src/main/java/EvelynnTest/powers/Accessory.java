@@ -1,5 +1,6 @@
 package EvelynnTest.powers;
 
+import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInDrawPileAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -26,7 +27,7 @@ public class Accessory extends AbstractEasyPower {
             if (!power.ID.equals(this.ID)){
                 addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, this));
             }
-            addToBot(new MakeTempCardInDrawPileAction(accessoryCard, 1, true, false, false));
+            addToBot(new MakeTempCardInDiscardAction(accessoryCard, 1));
         }
     }
 

@@ -27,6 +27,6 @@ public class Harder extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_DAMAGE);
+        upgradeDamage(UPG_DAMAGE);
     }
 }

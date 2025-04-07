@@ -14,6 +14,7 @@ public class FanaticalFollower extends AbstractEasyCard {
         super(ID, 0, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
         this.baseMagicNumber = magicNumber = 1;
         this.selfRetain = false;
+        this.isInnate = true;
         this.exhaust = true;
     }
 

@@ -60,6 +60,7 @@ public class Choke extends AbstractShiftingCard {
                 }
                 addToBot(new DamageAction(abstractMonster,
                         new DamageInfo(abstractPlayer, playedAttack ? damage : secondDamage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                this.isDone = true;
             }
         });
     }

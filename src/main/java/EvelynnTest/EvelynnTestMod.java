@@ -188,9 +188,10 @@ public class EvelynnTestMod implements
 
         //finds nearest X position to the left of that y value
         for(AbstractMonster mo : AbstractDungeon.getCurrRoom().monsters.monsters) {
-            System.out.println((mo.drawY) + "|" + offsetY);
-            if ((mo.drawY) >= offsetY){
-                offsetX = Math.min(((mo.drawX - (mo.hb.width/2) - ((float) Settings.WIDTH * 0.75F)) / Settings.scale), offsetX);
+            if (!mo.isDeadOrEscaped()) {
+                if ((mo.drawY) >= offsetY) {
+                    offsetX = Math.min(((mo.drawX - (mo.hb.width / 2) - ((float) Settings.WIDTH * 0.75F)) / Settings.scale), offsetX);
+                }
             }
         }
 

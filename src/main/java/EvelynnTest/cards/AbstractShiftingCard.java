@@ -39,6 +39,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         isCopy = false;
         currentForm = Form.NORMAL;
         this.textureImg = getShiftingCardTextureString(name, type);
+        System.out.println(this.textureImg);
         if (textureImg != null) {
             this.loadCardImage(textureImg);
         }

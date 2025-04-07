@@ -41,6 +41,14 @@ public class CharmPower extends AbstractEasyPower implements HealthBarRenderPowe
     }
 
     @Override
+    public void reducePower(int reduceAmount) {
+        if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID)){
+            return;
+        }
+        super.reducePower(reduceAmount);
+    }
+
+    @Override
     public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
         if (power.ID.equals(CharmPower.POWER_ID) && (power.amount + owner.getPower(CharmPower.POWER_ID).amount) >= this.owner.currentHealth && !this.owner.hasPower(MindControlledPower.POWER_ID)){
             addToBot(new ApplyPowerAction(this.owner, this.owner, new MindControlledPower(this.owner)));

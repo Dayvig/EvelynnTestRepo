@@ -30,7 +30,7 @@ public class SlapHarder extends AbstractShiftingCard {
     }
 
     public SlapHarder(boolean isCopy){
-        super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY, Form.NORMAL, isCopy);
+        super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY, Form.NORMAL, isCopy);
         setDemonValues(0, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseDamage = damage = DAMAGE;

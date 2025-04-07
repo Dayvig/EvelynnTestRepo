@@ -56,7 +56,7 @@ public class FlirtWatch extends AbstractShiftingCard {
     @Override
     public void useDemon(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new GainBlockAction(abstractPlayer, block));
-        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new VigorPower(abstractMonster, secondMagic), secondMagic));
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new VigorPower(abstractPlayer, secondMagic), secondMagic));
     }
 
     @Override

@@ -81,7 +81,7 @@
     ]
   },
   "${ModID}:BusinessCasualPower": {
-    "NAME": "Business Casual",
+    "NAME": "Executive Uniform",
     "DESCRIPTIONS": [
       "When attacked while 50% or less HP, gain #b",
       " weak."
@@ -216,6 +216,52 @@
     "NAME": "Retractable Claws",
     "DESCRIPTIONS": [
       "At the start of your turn, #yShift any number of cards in hand."
+    ]
+  },
+  "${ModID}:RingOfPainPower": {
+    "NAME": "Ring Of Pain",
+    "DESCRIPTIONS": [
+      "Vulnerable enemies take #b",
+      "% more damage."
+    ]
+  },
+  "${ModID}:SadismPower": {
+    "NAME": "Sadism",
+    "DESCRIPTIONS": [
+      "0 or 1-cost attacks targeting enemies with #b50% or less HP are played twice."
+      ]
+  },
+  "${ModID}:SafecrackerSuitPower": {
+    "NAME": "Safecracker Suit",
+    "DESCRIPTIONS": [
+      "When you kill a Vulnerable non-minion enemy, gain #b",
+      " gold."
+    ]
+  },
+  "${ModID}:ArtifactDownPower": {
+    "NAME": "Artifact Down Power",
+    "DESCRIPTIONS": [
+      "At the start of your turn, lose #b",
+      " #yArtifact."
+    ]
+  },
+  "${ModID}:PheremonePower": {
+    "NAME": "Love Pheremones",
+    "DESCRIPTIONS": [
+      "At the start of your turn, all enemies gain #b",
+      " #yCharm for every 5 stacks of non-Charm debuffs on them."
+    ]
+  },
+  "${ModID}:SuccubusPower": {
+    "NAME": "Succubus Form",
+    "DESCRIPTIONS": [
+      "Enemies cannot lose #yCharm. You cannot lose #yVigor."
+    ]
+  },
+  "${ModID}:HotColdPower": {
+    "NAME": "Hot and Cold",
+    "DESCRIPTIONS": [
+      "When you play a #yShifting card this turn, add it back to your hand and #yShift it."
     ]
   }
 }

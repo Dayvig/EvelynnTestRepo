@@ -124,7 +124,7 @@
   },
   "${ModID}:KissSuck": {
     "NAME": "Sweet Kiss",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL Heal enemy for !M!. NL Apply !M! evelynntestmod:Charm.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm. NL Heal enemy for !M!.",
     "EXTENDED_DESCRIPTION": [
       "Soul Suck",
       "evelynntestmod:Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!.",
@@ -147,7 +147,7 @@
   "${ModID}:FanaticalFollower": {
     "NAME": "Fanatical Follower",
     "DESCRIPTION": "Innate. NL Summon a random hostile Gremlin. NL Exhaust.",
-    "DESCRIPTION": "Innate. Retain. NL Summon a random hostile Gremlin. NL Exhaust."
+    "UPGRADE_DESCRIPTION": "Innate. Retain. NL Summon a random hostile Gremlin. NL Exhaust."
   },
   "${ModID}:GownVeil": {
     "NAME": "Evening Gown",
@@ -169,7 +169,7 @@
     ]
   },
   "${ModID}:BusinessCasual": {
-    "NAME": "Business Casual",
+    "NAME": "Executive Uniform",
     "DESCRIPTION": "Outfit. NL When you attack an enemy with 50% or less HP, apply !M! Weak.",
     "UPGRADE_DESCRIPTION": "Outfit. NL Draw 2 cards. NL When you attack an enemy with 50% or less HP, apply !M! Weak."
   },
@@ -250,8 +250,8 @@
   },
   "${ModID}:Playtime": {
     "NAME": "Playtime is Over",
-    "DESCRIPTION": "Ethereal. NL Enter evelynntestmod:Demon_Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon_Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Enter evelynntestmod:Demon\\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust."
   },
   "${ModID}:SpikedCollar": {
     "NAME": "Spiked Collar",
@@ -262,12 +262,12 @@
     "DESCRIPTION": "Gain !B! Block. NL Summon a hostile Gremlin. NL Apply !M! evelynntestmod:Charm to all enemies."
   },
   "${ModID}:Alluring": {
-    "NAME": "Alluring",
-    "DESCRIPTION": "Gain !M! evelynntestmod:Allure."
+    "NAME": "Natural Charisma",
+    "DESCRIPTION": "Gain !M! evelynntestmod:Charisma."
   },
   "${ModID}:DevilCostume": {
-    "NAME": "Devil Costume",
-    "DESCRIPTION": "evelynntestmod:Outfit. NL When you enter evelynntestmod:demon_shade, gain !M! Strength."
+    "NAME": "Dominatrix Attire",
+    "DESCRIPTION": "evelynntestmod:Outfit. NL When you enter evelynntestmod:Demon_Shade, gain !M! Strength."
   },
   "${ModID}:BeautyRest": {
     "NAME": "Beauty Rest",
@@ -326,7 +326,7 @@
     "NAME": "Love Marks",
     "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage twice. NL Apply !M! evelynntestmod:Charm.",
     "EXTENDED_DESCRIPTION": [
-      "Eviscerate",
+      "Rend Flesh",
       "evelynntestmod:Shifting. NL Deal !${ModID}:sd! Damage !${ModID}:m2! times.",
       "evelynntestmod:Shifting. NL Deal !${ModID}:sd! Damage !${ModID}:m2! times."
     ]
@@ -371,7 +371,7 @@
   },
   "${ModID}:ExtraPadding": {
     "NAME": "Extra Padding",
-    "DESCRIPTION": "Gain !B! Block. NL When you play a Power, add this from your discard pile to your hand."
+    "DESCRIPTION": "Gain !B! Block. NL When you play a Power, return this from the discard pile to your hand."
   },
   "${ModID}:MasqueradeCostume": {
     "NAME": "Masquerade Costume",
@@ -384,12 +384,12 @@
   },
   "${ModID}:DemonShade": {
     "NAME": "Demon Shade",
-    "DESCRIPTION": "Enter ${ModID}:Demon_Shade."
+    "DESCRIPTION": "Enter ${ModID}:Demon\u00a0Shade."
   },
   "${ModID}:CoolShades": {
     "NAME": "Cool Shades",
-    "DESCRIPTION": "${ModID}:Accessory. NL Gain ${ModID}:Allure equal to your combined Strength and Vigor.",
-    "UPGRADE_DESCRIPTION": "${ModID}:Accessory. NL Gain ${ModID}:Allure equal to your combined Strength and Vigor. NL Gain [E] [E]."
+    "DESCRIPTION": "${ModID}:Accessory. NL You have extra ${ModID}:Charisma equal to your combined Strength and Vigor.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Accessory. NL You have extra ${ModID}:Charisma equal to your combined Strength and Vigor. NL Gain [E] [E]."
   },
   "${ModID}:RetractableClaws": {
     "NAME": "Retractable Claws",
@@ -411,6 +411,48 @@
     "EXTENDED_DESCRIPTION": [
       " NL ( ",
       " Damage.)"
+    ]
+  },
+  "${ModID}:RingOfPain": {
+    "NAME": "Ring Of Pain",
+    "DESCRIPTION": "${ModID}:Accessory. NL Vulnerable enemies take !M!% more damage."
+  },
+  "${ModID}:Sadism": {
+    "NAME": "Sadism",
+    "DESCRIPTION": "0 or 1-cost Attacks targeting enemies with 50% or less HP are played twice."
+  },
+  "${ModID}:SafecrackerSuit": {
+    "NAME": "Safecracker Suit",
+    "DESCRIPTION": "${ModID}:Outfit. NL When you kill a Vulnerable non-minion enemy, gain !M! gold."
+  },
+  "${ModID}:SkincareRoutine": {
+    "NAME": "Skincare Routine",
+    "DESCRIPTION": "Gain !B! Block. NL Gain !M! Artifact until the start of your next turn."
+  },
+  "${ModID}:DebilitatingPheremones": {
+    "NAME": "Love Pheremones",
+    "DESCRIPTION": "At the start of each turn, apply !M! Charm to all enemies for every stack of non-Charm debuffs on them."
+  },
+  "${ModID}:SuccubusForm": {
+    "NAME": "Succubus Form",
+    "DESCRIPTION": "Ethereal. NL Enemies cannot lose ${ModID}:Charm. NL You cannot lose Vigor.",
+    "UPGRADE_DESCRIPTION": "Enemies cannot lose ${ModID}:Charm. NL You cannot lose Vigor."
+  },
+  "${ModID}:HotCold": {
+    "NAME": "Hot and Cold",
+    "DESCRIPTION": "When you play a ${ModID}:Shifting card this turn, add it back to your hand and ${ModID}:Shift it."
+  },
+  "${ModID}:Confidence": {
+    "NAME": "Ultimate Confidence",
+    "DESCRIPTION": "Fetch a skill from your draw or discard pile. NL ALL skills in your hand cost 1 less this turn. NL Exhaust."
+  },
+  "${ModID}:NaturalBeauty": {
+    "NAME": "Natural Beauty",
+    "DESCRIPTION": "${ModID}:Shifting. NL Apply !M! ${ModID}:Charm.",
+    "EXTENDED_DESCRIPTION": [
+      "Natural Brutality",
+      "${ModID}:Shifting. NL Deal !D! damage 3 times.",
+      "${ModID}:Shifting. NL Deal !D! damage 3 times."
     ]
   }
 }

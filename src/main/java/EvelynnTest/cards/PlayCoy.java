@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class PlayCoy extends AbstractEasyCard {
-    public final static String ID = makeID("Harder");
+    public final static String ID = makeID("PlayCoy");
 
     public static final int BLOCK = 5;
     public static final int UPG_BLOCK = 3;

@@ -26,9 +26,10 @@ public class RidingCrop extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        blck();
         addToBot(new ApplyPowerAction(p, p, new PunishmentPower(p, magicNumber, this.makeStatEquivalentCopy()), magicNumber));
-        addToBot(new MakeTempCardInHandAction(new HateSpike(), magicNumber));
+        if (upgraded) {
+            addToBot(new MakeTempCardInHandAction(new HateSpike(), magicNumber));
+        }
     }
 
     public void upp() {

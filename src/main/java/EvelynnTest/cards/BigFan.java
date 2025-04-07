@@ -18,6 +18,7 @@ public class BigFan extends AbstractEasyCard {
     public BigFan() {
         super(ID, 1, CardType.SKILL, CardRarity.RARE, CardTarget.NONE);
         baseMagicNumber = magicNumber = MAGIC;
+        this.exhaust = true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

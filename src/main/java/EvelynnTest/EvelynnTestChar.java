@@ -1,5 +1,7 @@
 package EvelynnTest;
 
+import EvelynnTest.cards.NaturalBeauty;
+import EvelynnTest.relics.Hunger;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -20,7 +22,6 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import EvelynnTest.cards.Defend;
 import EvelynnTest.cards.Strike;
-import EvelynnTest.relics.TodoItem;
 
 import java.util.ArrayList;
 
@@ -76,12 +77,13 @@ public class EvelynnTestChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
+        retVal.add(NaturalBeauty.ID);
         return retVal;
     }
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(TodoItem.ID);
+        retVal.add(Hunger.ID);
         return retVal;
     }
 
@@ -124,8 +126,7 @@ public class EvelynnTestChar extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        System.out.println("YOU NEED TO SET getStartCardForEvent() in your " + getClass().getSimpleName() + " file!");
-        return null;
+        return new NaturalBeauty();
     }
 
     @Override
