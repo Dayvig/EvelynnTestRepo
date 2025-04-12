@@ -68,10 +68,10 @@
     ]
   },
   "${ModID}:SlapHarder": {
-    "NAME": "Playful Slap",
+    "NAME": "Light Touch",
     "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage. NL Enemy loses !M! Strength this turn only.",
     "EXTENDED_DESCRIPTION": [
-      "Harder Slaps",
+      "Play Rough",
       "evelynntestmod:Shifting. NL Deal !evelynntestmod:sd! damage twice.",
       "evelynntestmod:Shifting. NL Deal !evelynntestmod:sd! damage twice."
     ]
@@ -210,7 +210,7 @@
     ]
   },
   "${ModID}:TheLook": {
-    "NAME": "The Look",
+    "NAME": "Piercing Gaze",
     "DESCRIPTION": "When you apply evelynntestmod:Charm, also apply !M! Vulnerable."
   },
   "${ModID}:Accessorize": {
@@ -241,7 +241,7 @@
   },
   "${ModID}:PainPleasure": {
     "NAME": "Pain in Pleasure",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy is evelynntestmod:Infatuated, deal !D! damage and gain !B! Block.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is evelynntestmod:Infatuated, gain !B! Block.",
     "EXTENDED_DESCRIPTION": [
       "Pleasure in Pain",
       "evelynntestmod:Shifting. NL Deal !D! Damage. NL Apply !M! evelynntestmod:Charm.",
@@ -250,8 +250,8 @@
   },
   "${ModID}:Playtime": {
     "NAME": "Playtime is Over",
-    "DESCRIPTION": "Ethereal. NL Enter evelynntestmod:Demon\\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust."
+    "DESCRIPTION": "Ethereal. NL Enter evelynntestmod:Demon\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust."
   },
   "${ModID}:SpikedCollar": {
     "NAME": "Spiked Collar",
@@ -278,7 +278,7 @@
     "DESCRIPTION": "Gain !B! Block. NL Exit your Stance."
   },
   "${ModID}:Shower": {
-    "NAME": "Cleansing Shower",
+    "NAME": "Rest and Relax",
     "DESCRIPTION": "Exhaust up to 3 cards. NL Apply !M! evelynntestmod:Charm to all enemies."
   },
   "${ModID}:Wardrobe": {
@@ -320,7 +320,7 @@
   },
   "${ModID}:RitualRobe": {
     "NAME": "Blood Moon Robe",
-    "DESCRIPTION": "evelynntestmod:Outfit. NL The first three attacks played heal you for !M! HP."
+    "DESCRIPTION": "evelynntestmod:Outfit. NL When you fully evelynntestmod:Charm an enemy, Heal !M! HP and gain !M! Vigor."
   },
   "${ModID}:MarkEviscerate": {
     "NAME": "Love Marks",
@@ -362,8 +362,8 @@
     "DESCRIPTION": "Lorem Ipsum"
   },
     "${ModID}:SaloonGarb": {
-      "NAME": "High Noon Attire",
-      "DESCRIPTION": "evelynntestmod:Outfit. NL The first !M! times you apply a debuff with this outfit on, gain #b1 Strength."
+      "NAME": "Saloon Garb",
+      "DESCRIPTION": "evelynntestmod:Outfit. NL The first !M! times you apply a debuff with this outfit on, gain 1 Strength."
   },
   "${ModID}:PopstarOutfit": {
     "NAME": "Pop Star Outfit",
@@ -446,7 +446,7 @@
     "NAME": "Ultimate Confidence",
     "DESCRIPTION": "Fetch a skill from your draw or discard pile. NL ALL skills in your hand cost 1 less this turn. NL Exhaust."
   },
-  "${ModID}:NaturalBeauty": {
+  "${ModID}:Beauty": {
     "NAME": "Natural Beauty",
     "DESCRIPTION": "${ModID}:Shifting. NL Apply !M! ${ModID}:Charm.",
     "EXTENDED_DESCRIPTION": [

@@ -1,6 +1,6 @@
 package EvelynnTest;
 
-import EvelynnTest.cards.NaturalBeauty;
+import EvelynnTest.cards.Beauty;
 import EvelynnTest.relics.Hunger;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
@@ -77,7 +77,7 @@ public class EvelynnTestChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(NaturalBeauty.ID);
+        retVal.add(Beauty.ID);
         return retVal;
     }
 
@@ -126,7 +126,7 @@ public class EvelynnTestChar extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return new NaturalBeauty();
+        return new Beauty();
     }
 
     @Override

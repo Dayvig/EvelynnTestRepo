@@ -17,7 +17,6 @@ public class PlayCoy extends AbstractEasyCard {
 
     public PlayCoy() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.NONE);
-        this.cardsToPreview = new HateSpike();
         this.baseBlock = block = BLOCK;
     }
 

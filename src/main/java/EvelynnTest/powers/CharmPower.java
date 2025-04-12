@@ -69,7 +69,7 @@ public class CharmPower extends AbstractEasyPower implements HealthBarRenderPowe
             }
         }
         if (damageAmount > owner.currentBlock && info.type.equals(DamageInfo.DamageType.NORMAL)){
-            addToTop(new ReducePowerAction(this.owner, this.owner, this, damageAmount - owner.currentBlock));
+            addToTop(new ReducePowerAction(this.owner, this.owner, this, (damageAmount - owner.currentBlock)/2));
         }
         return damageAmount;
     }

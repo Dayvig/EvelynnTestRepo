@@ -19,7 +19,7 @@ public class Sadism extends AbstractEasyCard {
     public static final int UPG_COST = 1;
 
     public Sadism() {
-        super(ID, 2, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
+        super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

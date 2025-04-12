@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 
 public class RitualRobePower extends Outfit {
 
@@ -34,20 +35,14 @@ public class RitualRobePower extends Outfit {
     }
 
     @Override
-    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
-        if (card.type.equals(AbstractCard.CardType.ATTACK) && this.amount2 > 0){
-            addToBot(new HealAction(owner, owner, this.amount));
-            addToBot(new AbstractGameAction() {
-                @Override
-                public void update() {
-                    amount2--;
-                    amount2 = Math.max(amount2, 0);
-                    flashWithoutSound();
-                    this.isDone = true;
-                }
-            });
+    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
+        if (power.ID.equals(MindControlledPower.POWER_ID) && source == this.owner && target != this.owner && !target.hasPower("Artifact")) {
+            this.flash();
+            addToBot(new HealAction(this.owner, this.owner,this.amount));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new VigorPower(this.owner, this.amount)));
         }
     }
+
 
     @Override
     public void updateDescription() {

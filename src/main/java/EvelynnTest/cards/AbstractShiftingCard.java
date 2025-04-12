@@ -38,7 +38,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         super(cardID, cost, type, rarity, target);
         isCopy = false;
         currentForm = Form.NORMAL;
-        this.textureImg = getShiftingCardTextureString(name, type);
+        this.textureImg = getShiftingCardTextureString(cardID, type);
         System.out.println(this.textureImg);
         if (textureImg != null) {
             this.loadCardImage(textureImg);
@@ -54,7 +54,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         super(cardID, cost, type, rarity, target);
         isCopy = copied;
         currentForm = form;
-        this.textureImg = getShiftingCardTextureString(name, type);
+        this.textureImg = getShiftingCardTextureString(cardID, type);
         if (textureImg != null) {
             this.loadCardImage(textureImg);
         }
@@ -79,7 +79,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
     public AbstractShiftingCard(String cardID, int cost, CardType type, CardRarity rarity, CardTarget target, CardColor color) {
         super(cardID, cost, type, rarity, target, color);
         currentForm = Form.NORMAL;
-        this.textureImg = getShiftingCardTextureString(name, type);
+        this.textureImg = getShiftingCardTextureString(cardID, type);
         if (textureImg != null) {
             this.loadCardImage(textureImg);
         }
@@ -136,14 +136,15 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         return "Demon";
     }
 
-    public String getShiftingCardTextureString(final String cardName, final AbstractCard.CardType cardType) {
+    public String getShiftingCardTextureString(final String cardID, final AbstractCard.CardType cardType) {
+        System.out.println(cardID);
         String textureString;
 
         switch (cardType) {
             case ATTACK:
             case POWER:
             case SKILL:
-                textureString = makeImagePath("cards/" + cardName + getFormString(currentForm) + ".png");
+                textureString = makeImagePath("cards/" + cardID.split(":")[1] + getFormString(currentForm) + ".png");
                 break;
             default:
                 textureString = makeImagePath("ui/missing.png");
@@ -175,7 +176,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
     public void Shift(boolean inCombat){
         if (currentForm.equals(Form.NORMAL)){
             currentForm = Form.DEMON;
-            this.textureImg = getShiftingCardTextureString(name, type);
+            this.textureImg = getShiftingCardTextureString(cardID, type);
             if (textureImg != null) {
                 this.loadCardImage(textureImg);
             }
@@ -206,7 +207,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         }
         else {
             currentForm = Form.NORMAL;
-            this.textureImg = getShiftingCardTextureString(name, type);
+            this.textureImg = getShiftingCardTextureString(cardID, type);
             if (textureImg != null) {
                 this.loadCardImage(textureImg);
             }
@@ -242,7 +243,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
     public void Shift(){
         if (currentForm.equals(Form.NORMAL)){
             currentForm = Form.DEMON;
-            this.textureImg = getShiftingCardTextureString(name, type);
+            this.textureImg = getShiftingCardTextureString(cardID, type);
             if (textureImg != null) {
                 this.loadCardImage(textureImg);
             }
@@ -270,7 +271,7 @@ public abstract class AbstractShiftingCard extends AbstractEasyCard {
         }
         else {
             currentForm = Form.NORMAL;
-            this.textureImg = getShiftingCardTextureString(name, type);
+            this.textureImg = getShiftingCardTextureString(cardID, type);
             if (textureImg != null) {
                 this.loadCardImage(textureImg);
             }

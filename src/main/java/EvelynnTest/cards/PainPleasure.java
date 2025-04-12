@@ -41,9 +41,9 @@ public class PainPleasure extends AbstractShiftingCard {
 
     @Override
     public void useNormal(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         if (isInfatuated(abstractMonster)){
             addToBot(new GainBlockAction(abstractPlayer, block));
-            addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
         }
     }
 
