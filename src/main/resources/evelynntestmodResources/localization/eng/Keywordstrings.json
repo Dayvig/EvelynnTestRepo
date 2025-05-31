@@ -97,5 +97,13 @@
       "charisma"
     ],
     "DESCRIPTION": "Increases Charm applied by cards."
+  },
+  {
+    "PROPER_NAME": "Hide",
+    "NAMES": [
+      "hide",
+      "hidden"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain Block. Reduces by 2 at the end of your turn and whenever you play an attack."
   }
 ]

@@ -1,7 +1,9 @@
 package EvelynnTest;
 
 import EvelynnTest.cards.Beauty;
-import EvelynnTest.relics.Hunger;
+import EvelynnTest.cards.testcards.HideAway;
+import EvelynnTest.cards.testcards.Stumble;
+import EvelynnTest.relics.WhiteFlag;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -74,16 +76,19 @@ public class EvelynnTestChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Strike.ID);
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             retVal.add(Defend.ID);
         }
-        retVal.add(Beauty.ID);
+        ///retVal.add(Beauty.ID);
+        retVal.add(HideAway.ID);
+        retVal.add(Stumble.ID);
         return retVal;
     }
 
     public ArrayList<String> getStartingRelics() {
         ArrayList<String> retVal = new ArrayList<>();
-        retVal.add(Hunger.ID);
+        //retVal.add(Hunger.ID);
+        retVal.add(WhiteFlag.ID);
         return retVal;
     }
 

@@ -263,5 +263,23 @@
     "DESCRIPTIONS": [
       "When you play a #yShifting card this turn, add it back to your hand and #yShift it."
     ]
+  },
+  "${ModID}:HidePower": {
+    "NAME": "Hidden",
+    "DESCRIPTIONS": [
+      "Gain Block at the end of turn. Reduces end of turn and play attack."
+    ]
+  },
+  "${ModID}:HideNext": {
+    "NAME": "HideNext",
+    "DESCRIPTIONS": [
+      "Gain hidden next turn."
+    ]
+  },
+  "${ModID}:FearfulPower": {
+    "NAME": "Fearful",
+    "DESCRIPTIONS": [
+      "If no attacks played, hide amount end turn"
+    ]
   }
 }

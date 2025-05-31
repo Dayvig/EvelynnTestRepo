@@ -454,5 +454,50 @@
       "${ModID}:Shifting. NL Deal !D! damage 3 times.",
       "${ModID}:Shifting. NL Deal !D! damage 3 times."
     ]
+  },
+  "${ModID}:HideCard1": {
+    "NAME": "Hide 1",
+    "DESCRIPTION": "Hide !M! gain artifact"
+  },
+  "${ModID}:HideCard2": {
+    "NAME": "Hide 2",
+    "DESCRIPTION": "Hide !M!"
+  },
+  "${ModID}:HideCard3": {
+    "NAME": "Hide 3",
+    "DESCRIPTION": "Hide !M! Block !B!"
+  },
+  "${ModID}:HideCard4": {
+    "NAME": "Hide 4",
+    "DESCRIPTION": "Block !B! Hide next !M!"
+  },
+  "${ModID}:HideCard5": {
+    "NAME": "Hide 5",
+    "DESCRIPTION": "Double hide. Exhaust",
+    "UPGRADE_DESCRIPTION": "Triple Hide. Exhaust"
+  },
+  "${ModID}:HideCard6": {
+    "NAME": "Hide 6",
+    "DESCRIPTION": "Hide !M! X times"
+  },
+  "${ModID}:HideCard7": {
+    "NAME": "Hide 7",
+    "DESCRIPTION": "Damage !D!. Hide !M!."
+  },
+  "${ModID}:HideCard8": {
+    "NAME": "Hide 8",
+    "DESCRIPTION": "At end of turn Hide !M! if no attacks played."
+  },
+  "${ModID}:HideCard9": {
+    "NAME": "Hide 9",
+    "DESCRIPTION": "Damage !D!. If killed, hide !M!."
+  },
+  "${ModID}:HideAway": {
+    "NAME": "Hide Away",
+    "DESCRIPTION": "Hide !M!. Gain !${ModID}:m2! Weak."
+  },
+  "${ModID}:Stumble": {
+    "NAME": "Stumble",
+    "DESCRIPTION": "Deal !D! damage. NL If you are debuffed, gain [E] and draw a card."
   }
 }

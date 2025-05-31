@@ -5,5 +5,12 @@
     "DESCRIPTIONS": [
       "When you deal attack damage, gain 1 Agony, doubled for enemies at 50% HP or below. NL For every 10 Agony, gain 1 Strength and Dexterity (Max 3.)"
     ]
+  },
+  "${ModID}:WhiteFlag": {
+    "NAME": "White Flag",
+    "FLAVOR": "I surrender!",
+    "DESCRIPTIONS": [
+      "At the start of each Act, gain a Smoke Bomb if you have room."
+    ]
   }
 }
