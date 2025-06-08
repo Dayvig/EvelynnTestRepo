@@ -36,9 +36,9 @@
     "PROPER_NAME": "Charm",
     "NAMES": [
       "charm",
-      "charm"
+      "charmed"
     ],
-    "DESCRIPTION": "If an enemy's Charm is greater than or equal to its HP, it fights for you and is removed from combat. When dealing attack damage, enemies lose that much Charm."
+    "DESCRIPTION": "When dealt attack damage, remove all Charm and gain 1 Weak and Vulnerable for each. If 5 or more was removed, become #yInfatuated and fight for Evelynn for one turn."
   },
   {
     "PROPER_NAME": "Accessory",

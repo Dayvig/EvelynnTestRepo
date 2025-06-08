@@ -16,23 +16,27 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class PainPleasure extends AbstractShiftingCard {
     public final static String ID = makeID("PainPleasure");
-    public final static int MAGIC = 16;
-    public final static int UPG_MAGIC = 2;
+    public final static int MAGIC = 2;
+    public final static int UPG_MAGIC = 1;
+    public final static int DAMAGE = 14;
+    public final static int UPG_DAMAGE = 2;
+    public final static int BLOCK = 14;
+    public final static int UPG_BLOCK = 2;
 
     public PainPleasure() {
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
         setDemonValues(2, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
-        this.baseBlock = block = MAGIC;
-        this.baseDamage = damage = MAGIC;
+        this.baseBlock = block = BLOCK;
+        this.baseDamage = damage = DAMAGE;
     }
 
     public PainPleasure(boolean isCopy){
         super(ID, 2, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY, Form.NORMAL, isCopy);
         setDemonValues(2, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
-        this.baseBlock = block = MAGIC;
-        this.baseDamage = damage = MAGIC;
+        this.baseBlock = block = BLOCK;
+        this.baseDamage = damage = DAMAGE;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -42,7 +46,7 @@ public class PainPleasure extends AbstractShiftingCard {
     @Override
     public void useNormal(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new DamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        if (isInfatuated(abstractMonster)){
+        if (abstractMonster.hasPower(CharmPower.POWER_ID)){
             addToBot(new GainBlockAction(abstractPlayer, block));
         }
     }
@@ -60,6 +64,8 @@ public class PainPleasure extends AbstractShiftingCard {
 
     public void upp() {
         super.upp();
+        upgradeDamage(UPG_DAMAGE);
+        upgradeBlock(UPG_BLOCK);
         upgradeMagicNumber(UPG_MAGIC);
         initializeDescription();
     }

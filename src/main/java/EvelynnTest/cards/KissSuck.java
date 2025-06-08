@@ -18,20 +18,23 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class KissSuck extends AbstractShiftingCard {
     public final static String ID = makeID("KissSuck");
-    public final static int MAGIC = 10;
-    public final static int UPG_MAGIC = 2;
+    public final static int MAGIC = 2;
+    public final static int MAGIC2 = 8;
+    public final static int UPG_MAGIC = 1;
+    public final static int UPG_MAGIC2 = 2;
 
     public KissSuck() {
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY);
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
-        this.baseSecondMagic = secondMagic = MAGIC;
+        this.baseSecondMagic = secondMagic = MAGIC2;
     }
 
     public KissSuck(boolean isCopy){
         super(ID, 1, CardType.SKILL, CardRarity.COMMON, CardTarget.ENEMY, Form.NORMAL, isCopy);
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
+        this.baseSecondMagic = secondMagic = MAGIC2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -41,7 +44,7 @@ public class KissSuck extends AbstractShiftingCard {
     @Override
     public void useNormal(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new CharmPower(abstractMonster, magicNumber), magicNumber));
-        addToBot(new HealAction(abstractMonster, abstractPlayer, secondMagic));
+        addToBot(new HealAction(abstractMonster, abstractPlayer, 8));
     }
 
     @Override
@@ -51,7 +54,7 @@ public class KissSuck extends AbstractShiftingCard {
             public void update() {
                 addToBot(new VFXAction(new HemokinesisEffect(abstractMonster.hb.cX, abstractMonster.hb.cY, abstractPlayer.hb.cX, abstractPlayer.hb.cY)));
                 addToBot(new WaitAction(0.5f));
-                if (abstractMonster.currentHealth <= magicNumber && !abstractMonster.hasPower(MinionPower.POWER_ID)){
+                if (abstractMonster.currentHealth <= secondMagic && !abstractMonster.hasPower(MinionPower.POWER_ID)){
                     addToBot(new HealAction(abstractPlayer, abstractPlayer, secondMagic));
                 }
                 addToBot(new LoseHPAction(abstractMonster, abstractMonster, secondMagic));
@@ -78,7 +81,7 @@ public class KissSuck extends AbstractShiftingCard {
     public void upp() {
         super.upp();
         upgradeMagicNumber(UPG_MAGIC);
-        upgradeSecondMagic(UPG_MAGIC);
+        upgradeSecondMagic(UPG_MAGIC2);
         initializeDescription();
     }
 }

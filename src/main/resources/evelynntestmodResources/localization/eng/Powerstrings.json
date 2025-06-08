@@ -15,9 +15,9 @@
     ]
   },
   "${ModID}:MindControlledPower": {
-    "NAME": "Mind Controlled",
+    "NAME": "Infatuated",
     "DESCRIPTIONS": [
-      "Fights for you"
+      "Fights for you. Harmful intents are directed towards enemies and grants you Block instead of itself."
     ]
   },
   "${ModID}:EveningGlovesPower": {
@@ -71,7 +71,8 @@
   "${ModID}:CharmPower": {
     "NAME": "Charm",
     "DESCRIPTIONS": [
-      "If Charm is equal to or greater than HP, fights for you. When taking Attack Damage, lose that much Charm."
+      "When taking attack damage, remove all Charm and gain 1 Weak and Vulnerable for each. If #b",
+      " or more Charm was removed, become Infatuated, fighting for you for 1 turn. Amount of Charm required increases by 2 each time an enemy is Infatuated."
     ]
   },
   "${ModID}:AccessorizedPower": {
@@ -280,6 +281,20 @@
     "NAME": "Fearful",
     "DESCRIPTIONS": [
       "If no attacks played, hide amount end turn"
+    ]
+  },
+  "${ModID}:CharmThresholdPower": {
+    "NAME": "Distrust",
+    "DESCRIPTIONS": [
+      "Increases Charm needed to become Infatuated by #b",
+      "."
+    ]
+  },
+  "${ModID}:FriendlyMonsterPower": {
+    "NAME": "Friendly",
+    "DESCRIPTIONS": [
+      "Will not perform actions. If Charmed, will become Infatuated and attack enemies for 1 turn.",
+      "."
     ]
   }
 }

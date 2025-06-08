@@ -1,5 +1,8 @@
 package EvelynnTest.patches;
 
+import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.unique.GainBlockRandomMonsterAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import basemod.ReflectionHacks;
 import com.badlogic.gdx.graphics.Color;
@@ -7,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.evacipated.cardcrawl.modthespire.lib.*;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.GameActionManager;
-import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
@@ -45,7 +47,7 @@ public class MindControlPatch {
             redirectTarget = null;
         }
 
-        private static class BeforeTakeTurnLocator extends SpireInsertLocator {
+        public static class BeforeTakeTurnLocator extends SpireInsertLocator {
             @Override
             public int[] Locate(CtBehavior ctMethodToPatch) throws Exception {
                 Matcher finalMatcher = new Matcher.MethodCallMatcher(AbstractMonster.class, "takeTurn");
@@ -76,6 +78,54 @@ public class MindControlPatch {
                             int amount = p.amount == 0 ? 1 : Math.abs(p.amount);
                             action[0] = new ApplyPowerAction(redirectTarget, action[0].source, new VulnerablePower(redirectTarget, amount, true), amount);
                         }
+                    }
+            }
+            if (action[0] instanceof GainBlockAction) {
+                //Applies block to player
+                action[0] = new GainBlockAction(AbstractDungeon.player, action[0].amount);
+            }
+
+            if (action[0] instanceof GainBlockRandomMonsterAction) {
+                //Applies block to player
+                action[0] = new GainBlockAction(AbstractDungeon.player, action[0].amount);
+            }
+
+                if (action[0] instanceof MakeTempCardInDiscardAction){
+                    MakeTempCardInDiscardAction make = (MakeTempCardInDiscardAction)action[0];
+                    AbstractCard cardToMake = ReflectionHacks.getPrivate(action[0], MakeTempCardInDiscardAction.class, "c");
+                    //If creating a status or curse in player's discard pile, changes to applying vulnerable
+                    if (cardToMake.type.equals(AbstractCard.CardType.CURSE) || cardToMake.type.equals(AbstractCard.CardType.STATUS)){
+                        action[0] = new ApplyPowerAction(redirectTarget, action[0].source, new VulnerablePower(redirectTarget, make.amount, true), make.amount);
+                    }
+                }
+
+                if (action[0] instanceof MakeTempCardInHandAction){
+                    MakeTempCardInHandAction make = (MakeTempCardInHandAction)action[0];
+                    AbstractCard cardToMake = ReflectionHacks.getPrivate(action[0], MakeTempCardInHandAction.class, "c");
+
+                    //If creating a status or curse in player's hand, changes to applying vulnerable
+                    if (cardToMake.type.equals(AbstractCard.CardType.CURSE) || cardToMake.type.equals(AbstractCard.CardType.STATUS)){
+                        action[0] = new ApplyPowerAction(redirectTarget, action[0].source, new VulnerablePower(redirectTarget, make.amount, true), make.amount);
+                    }
+                }
+
+                if (action[0] instanceof MakeTempCardInDrawPileAction){
+                    MakeTempCardInDrawPileAction make = (MakeTempCardInDrawPileAction)action[0];
+                    AbstractCard cardToMake = ReflectionHacks.getPrivate(action[0], MakeTempCardInDrawPileAction.class, "cardToMake");
+
+                    //If creating a status or curse in player's draw pile, changes to applying vulnerable
+                    if (cardToMake.type.equals(AbstractCard.CardType.CURSE) || cardToMake.type.equals(AbstractCard.CardType.STATUS)){
+                        action[0] = new ApplyPowerAction(redirectTarget, action[0].source, new VulnerablePower(redirectTarget, make.amount, true), make.amount);
+                    }
+                }
+
+                if (action[0] instanceof MakeTempCardInDiscardAndDeckAction){
+                    MakeTempCardInDiscardAndDeckAction make = (MakeTempCardInDiscardAndDeckAction)action[0];
+                    AbstractCard cardToMake = ReflectionHacks.getPrivate(action[0], MakeTempCardInDiscardAndDeckAction.class, "cardToMake");
+
+                    //If creating a status or curse in player's deck, changes to applying vulnerable
+                    if (cardToMake.type.equals(AbstractCard.CardType.CURSE) || cardToMake.type.equals(AbstractCard.CardType.STATUS)){
+                        action[0] = new ApplyPowerAction(redirectTarget, action[0].source, new VulnerablePower(redirectTarget, make.amount, true), make.amount);
                     }
                 }
             }
@@ -112,7 +162,7 @@ public class MindControlPatch {
         @SpirePostfixPatch
         public static void Postfix() {
             if (enabled) {
-                MindControlledPower.checkForCombatEnd();
+                //MindControlledPower.checkForCombatEnd();
             }
         }
     }

@@ -20,8 +20,10 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 public class SadoMasochism extends AbstractShiftingCard {
     public final static String ID = makeID("SadoMasochism");
     public final static int MAGIC = 2;
+    public final static int MAGIC2 = 3;
     public final static int DAMAGE = 5;
-    public final static int UPG_DAMAGE = 2;
+    public final static int UPG_DAMAGE = 5;
+    public final static int UPG_MAGIC2 = 1;
     public final static int UPG_BLOCK = 2;
     public final static int BLOCK = 12;
 
@@ -31,6 +33,7 @@ public class SadoMasochism extends AbstractShiftingCard {
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseDamage = damage = DAMAGE;
         this.baseBlock = block = BLOCK;
+        this.baseSecondMagic = secondMagic = MAGIC2;
     }
 
     public SadoMasochism(boolean isCopy){
@@ -39,6 +42,7 @@ public class SadoMasochism extends AbstractShiftingCard {
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseDamage = damage = DAMAGE;
         this.baseBlock = block = BLOCK;
+        this.baseSecondMagic = secondMagic = MAGIC2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -67,6 +71,7 @@ public class SadoMasochism extends AbstractShiftingCard {
     @Override
     public void useDemon(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new SadisticDamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL, true), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new CharmPower(abstractMonster, secondMagic), secondMagic));
     }
     @Override
     public AbstractShiftingCard makeShiftingCopy() {
@@ -77,6 +82,7 @@ public class SadoMasochism extends AbstractShiftingCard {
         super.upp();
         upgradeBlock(UPG_BLOCK);
         upgradeDamage(UPG_DAMAGE);
+        upgradeSecondMagic(UPG_MAGIC2);
         initializeDescription();
     }
 

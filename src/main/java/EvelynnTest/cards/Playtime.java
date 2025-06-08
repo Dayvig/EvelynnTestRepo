@@ -16,11 +16,14 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 public class Playtime extends AbstractEasyCard {
     public final static String ID = makeID("Playtime");
 
+    private static final int MAGIC = 5;
+    private static final int UPG_MAGIC = 3;
+
     public Playtime() {
         super(ID, 2, CardType.SKILL, CardRarity.RARE, CardTarget.SELF);
-        this.isEthereal = true;
         this.exhaust = true;
         this.isMultiDamage = true;
+        this.baseMagicNumber = magicNumber = MAGIC;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -30,7 +33,7 @@ public class Playtime extends AbstractEasyCard {
             public void update() {
                 for (AbstractMonster mo : Wiz.getEnemies()){
                     if (mo.hasPower(CharmPower.POWER_ID)){
-                        addToBot(new LoseHPAction(mo, p, mo.getPower(CharmPower.POWER_ID).amount, AttackEffect.POISON));
+                        addToBot(new LoseHPAction(mo, p, mo.getPower(CharmPower.POWER_ID).amount * magicNumber, AttackEffect.POISON));
                         addToBot(new RemoveSpecificPowerAction(mo, p, CharmPower.POWER_ID));
                     }
                 }
@@ -40,7 +43,7 @@ public class Playtime extends AbstractEasyCard {
     }
 
     public void upp() {
-        this.isEthereal = false;
+        upgradeMagicNumber(UPG_MAGIC);
         initializeDescription();
     }
 }

@@ -4,6 +4,7 @@ import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.patches.MindControlPatch;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.InstantKillAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -21,14 +22,19 @@ public class MindControlledPower extends AbstractEasyPower {
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
 
     public MindControlledPower(AbstractCreature owner) {
-        super(NAME, PowerType.BUFF, false, owner, -1);
+        super(NAME, PowerType.DEBUFF, false, owner, -1);
         this.ID = POWER_ID;
     }
 
     @Override
     public void onInitialApplication() {
         owner.flipHorizontal = !owner.flipHorizontal;
-        checkForCombatEnd();
+        for (AbstractPower p : AbstractDungeon.player.powers){
+            if (p instanceof Outfit){
+                Outfit out = (Outfit)p;
+                out.activateWhenFullyCharmed();
+            }
+        }
     }
 
     @Override
@@ -41,37 +47,9 @@ public class MindControlledPower extends AbstractEasyPower {
         description = DESCRIPTIONS[0];
     }
 
-    public static void checkForCombatEnd() {
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            if (!m.isDying && !m.isEscaping && m.currentHealth > 0 && !m.hasPower(POWER_ID)) {
-                return;
-            }
-        }
-
-        // All living enemies are Mind Controlled. They should die.
-        for (AbstractMonster m : AbstractDungeon.getMonsters().monsters) {
-            AbstractPower pow = m.getPower(POWER_ID);
-            if (pow != null) {
-                AbstractDungeon.actionManager.addToTop(new AbstractGameAction() {
-                    // Revived enemies will not be mind controlled.
-                    @Override
-                    public void update() {
-                        if (m.powers.contains(pow)) {
-                            pow.onRemove();
-                            m.powers.remove(pow);
-                        }
-                        isDone = true;
-                    }
-                });
-                AbstractDungeon.actionManager.addToTop(new InstantKillAction(m) {
-                    @Override
-                    public void update() {
-                        MindControlPatch.SuicidePatch.enabled = false;
-                        super.update();
-                        MindControlPatch.SuicidePatch.enabled = true;
-                    }
-                });
-            }
-        }
+    @Override
+    public void atEndOfRound(){
+        addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
     }
+
 }

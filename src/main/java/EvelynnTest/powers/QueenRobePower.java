@@ -33,9 +33,7 @@ public class QueenRobePower extends Outfit {
     public void atEndOfTurn(boolean isPlayer) {
         for (AbstractMonster mo : Wiz.getEnemies()){
             if (mo.hasPower(CharmPower.POWER_ID)){
-                if (mo.getPower(CharmPower.POWER_ID).amount >= mo.currentHealth/2){
-                    addToBot(new GainBlockAction(this.owner, this.amount));
-                }
+                addToBot(new GainBlockAction(this.owner, this.amount));
             }
         }
     }

@@ -24,17 +24,17 @@ public class SenseWeakness extends AbstractShiftingCard {
     private static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final int MAGIC2 = 3;
     public static final int UPG_MAGIC = 1;
-    public static final int MAGIC = 4;
+        public static final int MAGIC = 1;
 
     public SenseWeakness() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
+        setDemonValues(upgraded ? 0:1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         baseMagicNumber = magicNumber = MAGIC;
         baseSecondMagic = secondMagic = MAGIC2;
     }
     public SenseWeakness(boolean isCopy){
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY, Form.NORMAL, isCopy);
-        setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
+        setDemonValues(upgraded ? 0:1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         baseMagicNumber = magicNumber = MAGIC;
         baseSecondMagic = secondMagic = MAGIC2;
     }
@@ -98,7 +98,6 @@ public class SenseWeakness extends AbstractShiftingCard {
     @Override
     public void upp() {
         super.upp();
-        upgradeMagicNumber(UPG_MAGIC);
         upgradeSecondMagic(UPG_MAGIC);
     }
 }

@@ -9,6 +9,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPowe
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -17,15 +18,16 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import EvelynnTest.EvelynnTestMod;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 
-public class CharmPower extends AbstractEasyPower implements HealthBarRenderPower {
+public class CharmPower extends AbstractEasyPower {
     // intellij stuff Example, buff, false
     private static final String SIMPLE_NAME = "CharmPower";
     public static final String POWER_ID = EvelynnTestMod.makeID(SIMPLE_NAME);
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     public static final String LOC_NAME = powerStrings.NAME;
     public static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
-    HateSpike spike;
 
     public CharmPower(AbstractCreature owner, int amount) {
         super(SIMPLE_NAME, PowerType.DEBUFF, false, owner, amount);
@@ -35,29 +37,16 @@ public class CharmPower extends AbstractEasyPower implements HealthBarRenderPowe
 
     @Override
     public void onInitialApplication(){
-        if (this.amount >= this.owner.currentHealth && !this.owner.hasPower(MindControlledPower.POWER_ID)){
+        if (this.owner.hasPower(FriendlyMonsterPower.POWER_ID)){
             addToBot(new ApplyPowerAction(this.owner, this.owner, new MindControlledPower(this.owner)));
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
     }
 
     @Override
-    public void reducePower(int reduceAmount) {
+    public void onRemove() {
         if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID)){
-            return;
-        }
-        super.reducePower(reduceAmount);
-    }
-
-    @Override
-    public void onApplyPower(AbstractPower power, AbstractCreature target, AbstractCreature source) {
-        if (power.ID.equals(CharmPower.POWER_ID) && (power.amount + owner.getPower(CharmPower.POWER_ID).amount) >= this.owner.currentHealth && !this.owner.hasPower(MindControlledPower.POWER_ID)){
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new MindControlledPower(this.owner)));
-            for (AbstractPower p : AbstractDungeon.player.powers){
-                if (p instanceof Outfit){
-                    Outfit out = (Outfit)p;
-                    out.activateWhenFullyCharmed();
-                }
-            }
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new CharmPower(this.owner, 2)));
         }
     }
 
@@ -69,34 +58,24 @@ public class CharmPower extends AbstractEasyPower implements HealthBarRenderPowe
             }
         }
         if (damageAmount > owner.currentBlock && info.type.equals(DamageInfo.DamageType.NORMAL)){
-            addToTop(new ReducePowerAction(this.owner, this.owner, this, (damageAmount - owner.currentBlock)/2));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new VulnerablePower(this.owner, this.amount, true)));
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new WeakPower(this.owner, this.amount, true)));
+            int charmThreshold = this.owner.hasPower(CharmThresholdPower.POWER_ID) ? this.owner.getPower(CharmThresholdPower.POWER_ID).amount : 5;
+            if (this.amount >= charmThreshold){
+                addToBot(new ApplyPowerAction(this.owner, this.owner, new MindControlledPower(this.owner)));
+                if (this.owner.hasPower(CharmThresholdPower.POWER_ID)) {
+                    addToBot(new ApplyPowerAction(this.owner, this.owner, new CharmThresholdPower(this.owner, 2)));
+                }else {
+                    addToBot(new ApplyPowerAction(this.owner, this.owner, new CharmThresholdPower(this.owner, 5)));
+                }
+            }
+            addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this));
         }
         return damageAmount;
     }
 
     @Override
-    public void stackPower(int stackAmount) {
-        super.stackPower(stackAmount);
-        if (this.amount >= this.owner.currentHealth && !this.owner.hasPower(MindControlledPower.POWER_ID)){
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new MindControlledPower(this.owner)));
-        }
-    }
-
-    @Override
-    public int getHealthBarAmount() {
-        return this.amount;
-    }
-
-    @Override
-    public Color getColor() {
-        if (this.amount >= this.owner.currentHealth){
-            return Color.PURPLE.cpy();
-        }
-        return Color.PINK.cpy();
-    }
-
-    @Override
     public void updateDescription() {
-        description = DESCRIPTIONS[0];
+        description = DESCRIPTIONS[0] + (this.owner.hasPower(CharmThresholdPower.POWER_ID) ? this.owner.getPower(CharmThresholdPower.POWER_ID).amount : 5) + DESCRIPTIONS[1];
     }
 }

@@ -16,13 +16,14 @@ public class FemmeFatale extends AbstractEasyCard {
 
     public final static String ID = makeID("FemmeFatale");
 
-    private static final int MAGIC = 3;
-    private static final int UPG_MAGIC = 1;
+    private static final int MAGIC = 1;
+    private static final int BLOCK = 10;
 
     public FemmeFatale() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         baseMagicNumber = magicNumber = MAGIC;
         tags.add(EvelynnTestMod.CustomTags.OUTFIT);
+        baseBlock = block = BLOCK;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -30,6 +31,6 @@ public class FemmeFatale extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_MAGIC);
+        upgradeBlock(10);
     }
 }
