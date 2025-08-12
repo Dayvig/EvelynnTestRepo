@@ -10,7 +10,7 @@ import com.megacrit.cardcrawl.powers.AbstractPower;
 
 public class Outfit extends AbstractEasyPower {
 
-    AbstractCard outfitCard;
+    public AbstractCard outfitCard;
 
     public Outfit(String NAME, PowerType powerType, boolean isTurnBased, AbstractCreature owner, int amount, AbstractCard outfit) {
         super(NAME, powerType, isTurnBased, owner, amount);

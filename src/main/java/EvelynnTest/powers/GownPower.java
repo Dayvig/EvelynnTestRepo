@@ -3,15 +3,22 @@ package EvelynnTest.powers;
 import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.stances.DemonShadeStance;
 import EvelynnTest.util.Wiz;
+import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.*;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.status.VoidCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.stances.AbstractStance;
+
+import java.util.ArrayList;
 
 public class GownPower extends Outfit {
 
@@ -28,12 +35,24 @@ public class GownPower extends Outfit {
     }
 
     @Override
-    public void onCardDraw(AbstractCard card) {
-        if (card.type.equals(AbstractCard.CardType.STATUS)){
-            addToBot(new GainEnergyAction(2));
-            addToBot(new DrawCardAction(this.amount));
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        if (card.type.equals(AbstractCard.CardType.SKILL) && this.amount > 0) {
+            AbstractCreature randomTarget = Wiz.getRandomItem(Wiz.getEnemies());
+            addToBot(new ApplyPowerAction(randomTarget, this.owner, new WeakPower(randomTarget, 1, false), 1));
+            addToBot(new AbstractGameAction() {
+                final AbstractPower thisPower = owner.getPower(VeilPower.POWER_ID);
+                @Override
+                public void update() {
+                    thisPower.reducePower(this.amount);
+                    thisPower.updateDescription();
+                    AbstractDungeon.onModifyPower();
+                    this.isDone = true;
+                }
+            });
         }
     }
+
+
 
     @Override
     public void onChangeStance(AbstractStance oldStance, AbstractStance newStance) {

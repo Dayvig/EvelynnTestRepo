@@ -41,7 +41,7 @@ public class FemmeFatalePower extends Outfit {
 
     @Override
     public void activateWhenFullyCharmed(){
-        addToBot(new GainBlockAction(this.owner, this.amount2));
+        //addToBot(new GainBlockAction(this.owner, this.amount2));
     }
 
     @Override
