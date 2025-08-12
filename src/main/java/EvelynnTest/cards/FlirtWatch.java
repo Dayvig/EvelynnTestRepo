@@ -77,7 +77,7 @@ public class FlirtWatch extends AbstractShiftingCard {
     public void upp() {
         super.upp();
         upgradeMagicNumber(UPG_MAGIC2);
-        upgradeSecondMagic(UPG_MAGIC1);
+        upgradeSecondMagic(UPG_MAGIC2);
         upgradeBlock(UPG_MAGIC2);
         initializeDescription();
     }

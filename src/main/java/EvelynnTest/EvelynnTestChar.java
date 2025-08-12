@@ -1,7 +1,10 @@
 package EvelynnTest;
 
 import EvelynnTest.cards.Beauty;
+import EvelynnTest.cards.testcards.HideAway;
+import EvelynnTest.cards.testcards.Stumble;
 import EvelynnTest.relics.Hunger;
+import EvelynnTest.relics.WhiteFlag;
 import basemod.abstracts.CustomEnergyOrb;
 import basemod.abstracts.CustomPlayer;
 import basemod.animations.SpriterAnimation;
@@ -74,7 +77,7 @@ public class EvelynnTestChar extends CustomPlayer {
         for (int i = 0; i < 4; i++) {
             retVal.add(Strike.ID);
         }
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 5; i++) {
             retVal.add(Defend.ID);
         }
         retVal.add(Beauty.ID);

@@ -15,7 +15,7 @@ public class SuccubusForm extends AbstractEasyCard {
 
     public final static String ID = makeID("SuccubusForm");
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 6;
 
     public SuccubusForm() {
         super(ID, 3, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
@@ -24,7 +24,8 @@ public class SuccubusForm extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new SuccubusPower(p, magicNumber), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new SuccubusPower(p, 1), 1));
+        addToBot(new ApplyPowerAction(p,p, new AllurePower(p, magicNumber), magicNumber));
     }
 
 

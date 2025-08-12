@@ -1,6 +1,7 @@
-package EvelynnTest.cards;
+package EvelynnTest.temp;
 
 import EvelynnTest.EvelynnTestMod;
+import EvelynnTest.cards.AbstractEasyCard;
 import EvelynnTest.powers.FancyDressPower;
 import EvelynnTest.powers.MindControlledPower;
 import EvelynnTest.powers.QueenRobePower;

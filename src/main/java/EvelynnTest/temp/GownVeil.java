@@ -1,6 +1,6 @@
-package EvelynnTest.cards;
+package EvelynnTest.temp;
 
-import EvelynnTest.powers.FancyDressPower;
+import EvelynnTest.cards.AbstractShiftingCard;
 import EvelynnTest.powers.GownPower;
 import EvelynnTest.powers.VeilPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

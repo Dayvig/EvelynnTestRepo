@@ -1,7 +1,10 @@
 package EvelynnTest.cards;
 
+import EvelynnTest.powers.DominatrixPower;
 import EvelynnTest.powers.Megavuln;
 import EvelynnTest.powers.Megaweak;
+import EvelynnTest.powers.SeductressPower;
+import basemod.interfaces.AddAudioSubscriber;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
@@ -21,19 +24,22 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class SeduceDebilitate extends AbstractShiftingCard {
     public final static String ID = makeID("SeduceDebilitate");
-    public final static int MAGIC = 2;
-    public final static int UPG_MAGIC = 1;
+    public final static int MAGIC = 50;
+    public final static int MAGIC2 = 15;
+    public final static int UPGRADED_COST = 0;
 
     public SeduceDebilitate() {
-        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY);
+        super(ID, 1, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
         setDemonValues(0, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
+        this.baseSecondMagic = secondMagic = MAGIC2;
     }
 
     public SeduceDebilitate(boolean isCopy){
-        super(ID, 0, CardType.SKILL, CardRarity.RARE, CardTarget.ENEMY, Form.NORMAL, isCopy);
+        super(ID, 0, CardType.POWER, CardRarity.RARE, CardTarget.ENEMY, Form.NORMAL, isCopy);
         setDemonValues(0, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
+        this.baseSecondMagic = secondMagic = MAGIC2;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -42,20 +48,12 @@ public class SeduceDebilitate extends AbstractShiftingCard {
 
     @Override
     public void useNormal(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if (abstractMonster.hasPower(VulnerablePower.POWER_ID)){
-            int amnt = (int)Math.floor((double)abstractMonster.getPower(VulnerablePower.POWER_ID).amount / 5);
-            addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new Megavuln(abstractMonster, amnt*magicNumber, false), amnt*magicNumber));
-            addToBot(new RemoveSpecificPowerAction(abstractMonster, abstractMonster, VulnerablePower.POWER_ID));
-        }
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new SeductressPower(abstractPlayer, magicNumber), magicNumber));
     }
 
     @Override
     public void useDemon(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
-        if (abstractMonster.hasPower(WeakPower.POWER_ID)){
-            int amnt = (int)Math.floor((double)abstractMonster.getPower(WeakPower.POWER_ID).amount / 5);
-            addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new Megaweak(abstractMonster, amnt*magicNumber, false), amnt*magicNumber));
-            addToBot(new RemoveSpecificPowerAction(abstractMonster, abstractMonster, WeakPower.POWER_ID));
-        }
+        addToBot(new ApplyPowerAction(abstractPlayer, abstractPlayer, new DominatrixPower(abstractPlayer, secondMagic), secondMagic));
     }
 
     @Override
@@ -65,7 +63,7 @@ public class SeduceDebilitate extends AbstractShiftingCard {
 
     public void upp() {
         super.upp();
-        upgradeMagicNumber(UPG_MAGIC);
+        upgradeBaseCost(UPGRADED_COST);
         initializeDescription();
     }
 }

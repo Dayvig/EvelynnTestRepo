@@ -13,7 +13,7 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 public class StrutStomp extends AbstractShiftingCard {
     public final static String ID = makeID("StrutStomp");
     public final static int MAGIC = 4;
-    public final static int UPG_MAGIC = 1;
+    public final static int UPG_MAGIC = 2;
     public final static int BLOCK = 7;
     public final static int UPG_BLOCK_DMG = 2;
     public final static int DAMAGE = 7;
@@ -49,16 +49,7 @@ public class StrutStomp extends AbstractShiftingCard {
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
-                boolean trigger = false;
-                if (abstractMonster.hasPower(CharmPower.POWER_ID)){
-                    if (abstractMonster.currentHealth <= abstractMonster.getPower(CharmPower.POWER_ID).amount){
-                        trigger = true;
-                    }
-                }
-                if (abstractMonster.hasPower(VulnerablePower.POWER_ID)){
-                    trigger = true;
-                }
-                if (trigger){
+                if (abstractMonster.hasPower(CharmPower.POWER_ID) || abstractMonster.hasPower(VulnerablePower.POWER_ID)){
                     addToBot(new GainEnergyAction(1));
                     addToBot(new DrawCardAction(1));
                 }

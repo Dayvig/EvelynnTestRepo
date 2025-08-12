@@ -36,9 +36,9 @@
     "PROPER_NAME": "Charm",
     "NAMES": [
       "charm",
-      "charm"
+      "charmed"
     ],
-    "DESCRIPTION": "If an enemy's Charm is greater than or equal to its HP, it fights for you and is removed from combat. When dealing attack damage, enemies lose that much Charm."
+    "DESCRIPTION": "Doubles at the start of your turn. If an enemy's Charm meets or exceeds their current HP, it becomes Infatuated: losing all Charm, gaining 2 Vulnerable and becoming stunned for 1 turn."
   },
   {
     "PROPER_NAME": "Accessory",
@@ -97,5 +97,13 @@
       "charisma"
     ],
     "DESCRIPTION": "Increases Charm applied by cards."
+  },
+  {
+    "PROPER_NAME": "Hide",
+    "NAMES": [
+      "hide",
+      "hidden"
+    ],
+    "DESCRIPTION": "At the end of your turn, gain Block. Reduces by 2 at the end of your turn and whenever you play an attack."
   }
 ]

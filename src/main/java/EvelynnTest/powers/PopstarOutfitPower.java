@@ -3,13 +3,16 @@ package EvelynnTest.powers;
 import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.cards.Fervor;
 import EvelynnTest.util.Wiz;
+import com.evacipated.cardcrawl.mod.stslib.powers.abstracts.TwoAmountPower;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerToRandomEnemyAction;
 import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.PowerStrings;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.LoseStrengthPower;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
@@ -27,19 +30,14 @@ public class PopstarOutfitPower extends Outfit {
     public PopstarOutfitPower(AbstractCreature owner, int amount, AbstractCard outfit) {
         super(SIMPLE_NAME, PowerType.BUFF, false, owner, amount, outfit);
         name = LOC_NAME;
+        this.amount2 = 0;
         updateDescription();
     }
 
     @Override
     public void onAfterUseCard(AbstractCard card, UseCardAction action) {
         if (card.type.equals(AbstractCard.CardType.SKILL)){
-            ArrayList<AbstractCreature> validTargets = new ArrayList<>();
-            for (AbstractCreature mo : Wiz.getEnemies()){
-                if (!mo.hasPower(MindControlledPower.POWER_ID)){
-                    validTargets.add(mo);
-                }
-            }
-            AbstractCreature randomTarget = Wiz.getRandomItem(validTargets);
+            AbstractMonster randomTarget = Wiz.getRandomItem(Wiz.getEnemies());
             addToBot(new ApplyPowerAction(randomTarget, this.owner, new CharmPower(randomTarget, this.amount), this.amount));
         }
     }

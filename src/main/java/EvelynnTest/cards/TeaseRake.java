@@ -24,7 +24,7 @@ public class TeaseRake extends AbstractShiftingCard {
     public final static String ID = makeID("TeaseRake");
     public final static int MAGIC = 1;
     public final static int UPG_MAGIC = 1;
-    public final static int DAMAGE = 6;
+    public final static int DAMAGE = 9;
     public final static int UPG_DAMAGE = 1;
     public final static int BLOCK = 6;
     public final static int UPG_BLOCK = 1;

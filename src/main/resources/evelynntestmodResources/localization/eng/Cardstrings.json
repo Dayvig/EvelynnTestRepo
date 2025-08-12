@@ -124,11 +124,11 @@
   },
   "${ModID}:KissSuck": {
     "NAME": "Sweet Kiss",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm. NL Heal enemy for !M!.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm. NL Heal enemy for 8.",
     "EXTENDED_DESCRIPTION": [
       "Soul Suck",
-      "evelynntestmod:Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!.",
-      "evelynntestmod:Shifting. NL Enemy loses !M! HP. If Fatal, Heal !M!."
+      "evelynntestmod:Shifting. NL Enemy loses !${ModID}:m2! HP. If Fatal, Heal !${ModID}:m2!.",
+      "evelynntestmod:Shifting. NL Enemy loses !${ModID}:m2! HP. If Fatal, Heal !${ModID}:m2!."
     ]
   },
   "${ModID}:StrutStomp": {
@@ -136,8 +136,8 @@
     "DESCRIPTION": "evelynntestmod:Shifting. NL Gain !B! Block. NL When you fully block an attack this turn, apply !M! evelynntestmod:Charm to the attacker.",
     "EXTENDED_DESCRIPTION": [
       "Heel Stomp",
-      "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card.",
-      "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is Infatuated or Vulnerable, gain [E] and draw a card."
+      "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is ${ModID}:Charmed or Vulnerable, gain [E] and draw a card.",
+      "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is ${ModID}:Charmed or Vulnerable, gain [E] and draw a card."
     ]
   },
   "${ModID}:EveningGloves": {
@@ -178,17 +178,17 @@
     "DESCRIPTION": "evelynntestmod:Shifting. NL Gain !B! Block. NL Target enemy gains !M! Strength this turn only.",
     "EXTENDED_DESCRIPTION": [
       "Invoke Masochism",
-      "evelynntestmod:Shifting. NL Deal !D! damage. This damage increases evelynntestmod:Charm instead of reducing it.",
-      "evelynntestmod:Shifting. NL Deal !D! damage. This damage increases evelynntestmod:Charm instead of reducing it."
+      "evelynntestmod:Shifting. NL Deal !D! damage. NL Does not remove Charm and instead applies !${ModID}:m2! Charm.",
+      "evelynntestmod:Shifting. NL Deal !D! damage. NL Does not remove Charm and instead applies !${ModID}:m2! Charm."
     ]
   },
   "${ModID}:SeduceDebilitate": {
-    "NAME": "Seduce",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL Remove all Vulnerable from an enemy and and apply !M! evelynntestmod:Mega-Vulnerable for every 5 stacks removed.",
+    "NAME": "Seductress",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Enemies with 5 or more Vulnerable take !M!% more damage.",
     "EXTENDED_DESCRIPTION": [
-      "Debilitate",
-      "evelynntestmod:Shifting. NL Remove all Weak from an enemy and and apply !M! evelynntestmod:Mega_Weak for every 5 stacks removed.",
-      "evelynntestmod:Shifting. NL Remove all Weak from an enemy and and apply !M! evelynntestmod:Mega_Weak for every 5 stacks removed."
+      "Dominatrix",
+      "evelynntestmod:Shifting. NL Enemies with 5 or more Weak deal !${ModID}:m2!% less damage.",
+      "evelynntestmod:Shifting. NL Enemies with 5 or more Weak deal !${ModID}:m2!% less damage."
     ]
   },
   "${ModID}:TeaseRake": {
@@ -224,8 +224,8 @@
     "UPGRADE_DESCRIPTION": "Fetch an evelynntestmod:Outfit or evelynntestmod:Accessory from your draw pile."
   },
   "${ModID}:SenseWeakness": {
-    "NAME": "Sense Weakness",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy intends to attack, apply !${ModID}:m2! Vulnerable to it.",
+    "NAME": "Threaten",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy intends to attack, apply !${ModID}:m2! Vulnerable to it and Fetch an Attack from your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "Play Nice",
       "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm for each Attack played this turn.",
@@ -237,11 +237,11 @@
   },
   "${ModID}:QueenRobe": {
     "NAME": "Queen's Robe",
-    "DESCRIPTION": "Outfit. NL Charmed enemies gain !M! Strength. NL At the end of your turn, gain !M! Block for each Infatuated enemy."
+    "DESCRIPTION": "Outfit. NL ${ModID}:Infatuated enemies gain !M! Strength. NL At the end of your turn, gain !M! Block for each ${ModID}:Charmed enemy."
   },
   "${ModID}:PainPleasure": {
     "NAME": "Pain in Pleasure",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is evelynntestmod:Infatuated, gain !B! Block.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Deal !D! damage. NL If the enemy is evelynntestmod:Charmed, gain !B! Block.",
     "EXTENDED_DESCRIPTION": [
       "Pleasure in Pain",
       "evelynntestmod:Shifting. NL Deal !D! Damage. NL Apply !M! evelynntestmod:Charm.",
@@ -250,8 +250,8 @@
   },
   "${ModID}:Playtime": {
     "NAME": "Playtime is Over",
-    "DESCRIPTION": "Ethereal. NL Enter evelynntestmod:Demon\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL ALL enemies take damage equal to their evelynntestmod:Charm. NL Exhaust."
+    "DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL Gain 1 Strength for each !M! evelynntestmod:Charm on enemies. NL All enemies lose their evelynntestmod:Charm. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL Gain 1 Strength for each !M! evelynntestmod:Charm on enemies. NL All enemies lose their evelynntestmod:Charm. NL Exhaust."
   },
   "${ModID}:SpikedCollar": {
     "NAME": "Spiked Collar",
@@ -334,7 +334,7 @@
   "${ModID}:RidingCrop": {
     "NAME": "Riding Crop",
     "DESCRIPTION": "evelynntestmod:Accessory. NL When you receive attack damage or a debuff, gain !M! *Hate *Spikes.",
-    "UPGRADE_DESCRIPTION": "evelynntestmod:Accessory. NL When you receive attack damage or a debuff, gain !M! *Hate *Spikes."
+    "UPGRADE_DESCRIPTION": "evelynntestmod:Accessory. NL Now and when you receive attack damage or a debuff, gain !M! *Hate *Spikes."
   },
   "${ModID}:Fervor": {
     "NAME": "Rising Fervor",
@@ -342,7 +342,7 @@
   },
   "${ModID}:LastCaress": {
     "NAME": "Last Caress",
-    "DESCRIPTION": "Deal !D! damage. Damage is doubled if enemy is evelynntestmod:Infatuated. Damage is doubled if enemy is at 50% or less HP."
+    "DESCRIPTION": "Deal !D! damage. Damage is doubled if enemy is evelynntestmod:Charmed. Damage is doubled if enemy is at 50% or less HP."
   },
   "${ModID}:Resentment": {
     "NAME": "Resentment",
@@ -358,8 +358,8 @@
     "DESCRIPTION": "Deal !D! damage !M! times. NL Heal enemy for !evelynntestmod:m2!."
   },
   "${ModID}:FemmeFatale": {
-    "NAME": "FemmeFatale",
-    "DESCRIPTION": "Lorem Ipsum"
+    "NAME": "Femme Fatale",
+    "DESCRIPTION": "Outfit. NL When dealing damage to an enemy, apply !M! ${ModID}:Charm to all other enemies. When an enemy is ${ModID}:Infatuated, gain !B! Block."
   },
     "${ModID}:SaloonGarb": {
       "NAME": "Saloon Garb",
@@ -388,8 +388,8 @@
   },
   "${ModID}:CoolShades": {
     "NAME": "Cool Shades",
-    "DESCRIPTION": "${ModID}:Accessory. NL You have extra ${ModID}:Charisma equal to your combined Strength and Vigor.",
-    "UPGRADE_DESCRIPTION": "${ModID}:Accessory. NL You have extra ${ModID}:Charisma equal to your combined Strength and Vigor. NL Gain [E] [E]."
+    "DESCRIPTION": "${ModID}:Accessory. NL If you have Vigor, gain 1 ${ModID}:Charisma.",
+    "UPGRADE_DESCRIPTION": "${ModID}:Accessory. NL If you have Vigor, gain 1 ${ModID}:Charisma. NL Gain [E] [E]."
   },
   "${ModID}:RetractableClaws": {
     "NAME": "Retractable Claws",
@@ -407,7 +407,7 @@
   },
   "${ModID}:Heartbreaker": {
     "NAME": "Heartbreaker",
-    "DESCRIPTION": "Deal damage equal to double an enemy's ${ModID}:Charm.",
+    "DESCRIPTION": "Deal damage equal to half of an enemy's ${ModID}:Charm.",
     "EXTENDED_DESCRIPTION": [
       " NL ( ",
       " Damage.)"
@@ -435,8 +435,8 @@
   },
   "${ModID}:SuccubusForm": {
     "NAME": "Succubus Form",
-    "DESCRIPTION": "Ethereal. NL Enemies cannot lose ${ModID}:Charm. NL You cannot lose Vigor.",
-    "UPGRADE_DESCRIPTION": "Enemies cannot lose ${ModID}:Charm. NL You cannot lose Vigor."
+    "DESCRIPTION": "Ethereal. NL Gain !M! ${ModID}:Allure. NL You cannot lose Vigor.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${ModID}:Allure. NL You cannot lose Vigor."
   },
   "${ModID}:HotCold": {
     "NAME": "Hot and Cold",
@@ -454,5 +454,50 @@
       "${ModID}:Shifting. NL Deal !D! damage 3 times.",
       "${ModID}:Shifting. NL Deal !D! damage 3 times."
     ]
+  },
+  "${ModID}:HideCard1": {
+    "NAME": "Hide 1",
+    "DESCRIPTION": "Hide !M! gain artifact"
+  },
+  "${ModID}:HideCard2": {
+    "NAME": "Hide 2",
+    "DESCRIPTION": "Hide !M!"
+  },
+  "${ModID}:HideCard3": {
+    "NAME": "Hide 3",
+    "DESCRIPTION": "Hide !M! Block !B!"
+  },
+  "${ModID}:HideCard4": {
+    "NAME": "Hide 4",
+    "DESCRIPTION": "Block !B! Hide next !M!"
+  },
+  "${ModID}:HideCard5": {
+    "NAME": "Hide 5",
+    "DESCRIPTION": "Double hide. Exhaust",
+    "UPGRADE_DESCRIPTION": "Triple Hide. Exhaust"
+  },
+  "${ModID}:HideCard6": {
+    "NAME": "Hide 6",
+    "DESCRIPTION": "Hide !M! X times"
+  },
+  "${ModID}:HideCard7": {
+    "NAME": "Hide 7",
+    "DESCRIPTION": "Damage !D!. Hide !M!."
+  },
+  "${ModID}:HideCard8": {
+    "NAME": "Hide 8",
+    "DESCRIPTION": "At end of turn Hide !M! if no attacks played."
+  },
+  "${ModID}:HideCard9": {
+    "NAME": "Hide 9",
+    "DESCRIPTION": "Damage !D!. If killed, hide !M!."
+  },
+  "${ModID}:HideAway": {
+    "NAME": "Hide Away",
+    "DESCRIPTION": "Hide !M!. Gain !${ModID}:m2! Weak."
+  },
+  "${ModID}:Stumble": {
+    "NAME": "Stumble",
+    "DESCRIPTION": "Deal !D! damage. NL If you are debuffed, gain [E] and draw a card."
   }
 }

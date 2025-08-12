@@ -25,6 +25,7 @@ public class PullHold extends AbstractShiftingCard {
     public final static String ID = makeID("PullHold");
     public final static int MAGIC = 8;
     public final static int MAGIC2 = 4;
+    public final static int MAGIC3 = 8;
     public final static int UPG_MAGIC = 2;
 
     public PullHold() {
@@ -32,7 +33,7 @@ public class PullHold extends AbstractShiftingCard {
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseSecondMagic = secondMagic = MAGIC2;
-        this.baseThirdMagic = thirdMagic = MAGIC;
+        this.baseThirdMagic = thirdMagic = MAGIC3;
     }
 
     public PullHold(boolean isCopy){
@@ -40,7 +41,7 @@ public class PullHold extends AbstractShiftingCard {
         setDemonValues(1, CardType.SKILL, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
         this.baseMagicNumber = magicNumber = MAGIC;
         this.baseSecondMagic = secondMagic = MAGIC2;
-        this.baseThirdMagic = thirdMagic = MAGIC;
+        this.baseThirdMagic = thirdMagic = MAGIC3;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
@@ -92,6 +93,7 @@ public class PullHold extends AbstractShiftingCard {
 
     public void upp() {
         super.upp();
+        upgradeMagicNumber(UPG_MAGIC);
         upgradeSecondMagic(UPG_MAGIC);
         upgradeThirdMagic(UPG_MAGIC);
         initializeDescription();

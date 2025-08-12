@@ -3,6 +3,7 @@ package EvelynnTest.powers;
 import EvelynnTest.EvelynnTestMod;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
+import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -39,7 +40,9 @@ public class CoolShadesPower extends Accessory {
 
     public void onInitialApplication() {
         int strVigor = StrengthAndVigor();
-        addToBot(new ApplyPowerAction(this.owner, this.owner, new AllurePower(this.owner, strVigor), strVigor));
+        if (strVigor != 0) {
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new AllurePower(this.owner, strVigor), strVigor));
+        }
         prevStrengthAndVigor = strVigor;
     }
 
@@ -50,7 +53,7 @@ public class CoolShadesPower extends Accessory {
             baseAllureValue += this.owner.getPower(AllurePower.POWER_ID).amount;
         }
         baseAllureValue -= prevStrengthAndVigor;
-        if (owner.hasPower(AllurePower.POWER_ID)){
+        if (owner.hasPower(AllurePower.POWER_ID)) {
             owner.getPower(AllurePower.POWER_ID).amount = baseAllureValue + newStrVigor;
         }
         else {
@@ -65,14 +68,10 @@ public class CoolShadesPower extends Accessory {
     }
 
     public int StrengthAndVigor(){
-        int amnt = 0;
-        if (this.owner.hasPower(StrengthPower.POWER_ID)){
-            amnt += this.owner.getPower(StrengthPower.POWER_ID).amount;
-        }
         if (this.owner.hasPower(VigorPower.POWER_ID)){
-            amnt += this.owner.getPower(VigorPower.POWER_ID).amount;
+            return 1;
         }
-        return amnt;
+        return 0;
     }
 
     @Override

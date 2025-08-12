@@ -2,6 +2,7 @@ package EvelynnTest.cards;
 
 import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.powers.CharmPower;
+import EvelynnTest.powers.CharmThresholdPower;
 import EvelynnTest.powers.FervorPower;
 import com.badlogic.gdx.graphics.Color;
 import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
@@ -42,7 +43,7 @@ public class LastCaress extends AbstractEasyCard {
     public void calculateCardDamage(AbstractMonster mo){
         super.calculateCardDamage(mo);
         int doubles = 0;
-        if (EvelynnTestMod.isInfatuated(mo)){
+        if (mo.hasPower(CharmPower.POWER_ID)){
             this.damage *= 2;
             isDamageModified = true;
             doubles++;

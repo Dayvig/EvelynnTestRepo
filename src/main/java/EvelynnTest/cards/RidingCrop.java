@@ -33,6 +33,7 @@ public class RidingCrop extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_MAGIC);
+       this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+       initializeDescription();
     }
 }

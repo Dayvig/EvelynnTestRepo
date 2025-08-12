@@ -17,7 +17,7 @@ public class AttractAttention extends AbstractEasyCard {
     public final static String ID = makeID("AttractAttention");
     public static final int BLOCK = 18;
     public static final int UPG_BLOCk = 4;
-    public static final int MAGIC = 4;
+    public static final int MAGIC = 2;
     public static final int UPG_MAGIC = 1;
 
     public AttractAttention() {

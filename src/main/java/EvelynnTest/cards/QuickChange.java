@@ -22,6 +22,7 @@ public class QuickChange extends AbstractEasyCard {
 
     public void upp() {
         this.exhaust = false;
+        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
         initializeDescription();
     }
 }

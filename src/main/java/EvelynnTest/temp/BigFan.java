@@ -1,9 +1,12 @@
-package EvelynnTest.cards;
+package EvelynnTest.temp;
 
 import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.actions.BetterSummonAction;
 import EvelynnTest.actions.BetterSummonGremlinAction;
+import EvelynnTest.cards.AbstractEasyCard;
+import EvelynnTest.powers.FriendlyMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
+import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.exordium.GremlinNob;
@@ -25,6 +28,7 @@ public class BigFan extends AbstractEasyCard {
         GremlinNob nob = new GremlinNob(EvelynnTestMod.getSmartPosition(0f)[0], EvelynnTestMod.getSmartPosition(0f)[1]);
         nob.currentHealth = magicNumber;
         addToBot(new BetterSummonAction(nob));
+        addToBot(new ApplyPowerAction(nob, nob, new FriendlyMonsterPower(nob, 1)));
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {

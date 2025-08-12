@@ -1,5 +1,6 @@
 package EvelynnTest;
 
+import EvelynnTest.relics.WhiteFlag;
 import EvelynnTest.powers.BlingPower;
 import EvelynnTest.powers.CharmPower;
 import basemod.AutoAdd;
@@ -13,11 +14,13 @@ import com.evacipated.cardcrawl.mod.stslib.Keyword;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
+import com.megacrit.cardcrawl.actions.common.ObtainPotionAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.potions.SmokeBomb;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -36,7 +39,8 @@ public class EvelynnTestMod implements
         EditStringsSubscriber,
         EditKeywordsSubscriber,
         EditCharactersSubscriber,
-        OnPlayerLoseBlockSubscriber
+        OnPlayerLoseBlockSubscriber,
+        StartActSubscriber
 {
 
     public static final String modID = "evelynntestmod"; //TODO: Change this.
@@ -201,5 +205,12 @@ public class EvelynnTestMod implements
         }
 
         return new float[]{offsetX - (75f * Settings.scale), offsetY};
+    }
+
+    @Override
+    public void receiveStartAct() {
+        if (AbstractDungeon.player.hasRelic(WhiteFlag.ID)) {
+            AbstractDungeon.player.obtainPotion(new SmokeBomb());
+        }
     }
 }

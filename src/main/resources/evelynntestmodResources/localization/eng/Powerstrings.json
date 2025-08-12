@@ -15,9 +15,9 @@
     ]
   },
   "${ModID}:MindControlledPower": {
-    "NAME": "Mind Controlled",
+    "NAME": "Infatuated",
     "DESCRIPTIONS": [
-      "Fights for you"
+      "Fights for you. Harmful intents are directed towards enemies and grants you Block instead of itself."
     ]
   },
   "${ModID}:EveningGlovesPower": {
@@ -71,7 +71,7 @@
   "${ModID}:CharmPower": {
     "NAME": "Charm",
     "DESCRIPTIONS": [
-      "If Charm is equal to or greater than HP, fights for you. When taking Attack Damage, lose that much Charm."
+      "Doubles at the start of your turn. If an enemy's Charm meets or exceeds their current HP, it becomes Infatuated: losing all Charm, gaining 2 Vulnerable and becoming stunned for 1 turn."
     ]
   },
   "${ModID}:AccessorizedPower": {
@@ -262,6 +262,52 @@
     "NAME": "Hot and Cold",
     "DESCRIPTIONS": [
       "When you play a #yShifting card this turn, add it back to your hand and #yShift it."
+    ]
+  },
+  "${ModID}:HidePower": {
+    "NAME": "Hidden",
+    "DESCRIPTIONS": [
+      "Gain Block at the end of turn. Reduces end of turn and play attack."
+    ]
+  },
+  "${ModID}:HideNext": {
+    "NAME": "HideNext",
+    "DESCRIPTIONS": [
+      "Gain hidden next turn."
+    ]
+  },
+  "${ModID}:FearfulPower": {
+    "NAME": "Fearful",
+    "DESCRIPTIONS": [
+      "If no attacks played, hide amount end turn"
+    ]
+  },
+  "${ModID}:CharmThresholdPower": {
+    "NAME": "Distrust",
+    "DESCRIPTIONS": [
+      "Increases Charm needed to become Infatuated by #b",
+      "."
+    ]
+  },
+  "${ModID}:FriendlyMonsterPower": {
+    "NAME": "Friendly",
+    "DESCRIPTIONS": [
+      "Will not perform actions. If Charmed, will become Infatuated and attack enemies for 1 turn.",
+      "."
+    ]
+  },
+  "${ModID}:SeductressPower": {
+    "NAME": "Seductress",
+    "DESCRIPTIONS": [
+      "Enemies with 5 or more Vulnerable take #b",
+      "% more damage."
+    ]
+  },
+  "${ModID}:DominatrixPower": {
+    "NAME": "Dominatrix",
+    "DESCRIPTIONS": [
+      "Enemies with 5 or more Weak deal #b",
+      "% less damage."
     ]
   }
 }
