@@ -71,8 +71,7 @@
   "${ModID}:CharmPower": {
     "NAME": "Charm",
     "DESCRIPTIONS": [
-      "When taking attack damage, remove all Charm and gain 1 Weak and Vulnerable for each. If #b",
-      " or more Charm was removed, become Infatuated, fighting for you for 1 turn. Amount of Charm required increases by 2 each time an enemy is Infatuated."
+      "Doubles at the start of your turn. If an enemy's Charm meets or exceeds their current HP, it becomes Infatuated: losing all Charm, gaining 2 Vulnerable and becoming stunned for 1 turn."
     ]
   },
   "${ModID}:AccessorizedPower": {
@@ -295,6 +294,20 @@
     "DESCRIPTIONS": [
       "Will not perform actions. If Charmed, will become Infatuated and attack enemies for 1 turn.",
       "."
+    ]
+  },
+  "${ModID}:SeductressPower": {
+    "NAME": "Seductress",
+    "DESCRIPTIONS": [
+      "Enemies with 5 or more Vulnerable take #b",
+      "% more damage."
+    ]
+  },
+  "${ModID}:DominatrixPower": {
+    "NAME": "Dominatrix",
+    "DESCRIPTIONS": [
+      "Enemies with 5 or more Weak deal #b",
+      "% less damage."
     ]
   }
 }

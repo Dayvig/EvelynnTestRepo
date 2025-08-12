@@ -12,8 +12,8 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class StrutStomp extends AbstractShiftingCard {
     public final static String ID = makeID("StrutStomp");
-    public final static int MAGIC = 1;
-    public final static int UPG_MAGIC = 1;
+    public final static int MAGIC = 4;
+    public final static int UPG_MAGIC = 2;
     public final static int BLOCK = 7;
     public final static int UPG_BLOCK_DMG = 2;
     public final static int DAMAGE = 7;

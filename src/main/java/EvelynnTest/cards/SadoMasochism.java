@@ -71,8 +71,8 @@ public class SadoMasochism extends AbstractShiftingCard {
     @Override
     public void useDemon(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
         addToBot(new DamageAction(abstractMonster, new SadisticDamageInfo(abstractPlayer, damage, DamageInfo.DamageType.NORMAL, true), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        addToBot(new ApplyPowerAction(abstractMonster, abstractPlayer, new CharmPower(abstractMonster, secondMagic), secondMagic));
     }
+
     @Override
     public AbstractShiftingCard makeShiftingCopy() {
         return new SadoMasochism(true);

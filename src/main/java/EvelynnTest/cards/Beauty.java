@@ -13,8 +13,8 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 public class Beauty extends AbstractShiftingCard {
     public final static String ID = makeID("Beauty");
 
-    public static final int MAGIC = 8;
-    public static final int UPG_MAGIC = 3;
+    public static final int MAGIC = 6;
+    public static final int UPG_MAGIC = 2;
     public static final int DAMAGE = 3;
     public static final int MAGIC2 = 3;
     public static final int UPG_DAMAGE = 1;
@@ -22,14 +22,14 @@ public class Beauty extends AbstractShiftingCard {
     public Beauty() {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.ENEMY);
         setDemonValues(1, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
-        this.baseMagicNumber = magicNumber = 8;
+        this.baseMagicNumber = magicNumber = MAGIC;
         this.baseDamage = damage = DAMAGE;
     }
 
     public Beauty(boolean isCopy) {
         super(ID, 1, CardType.SKILL, CardRarity.BASIC, CardTarget.ENEMY, Form.NORMAL, isCopy);
         setDemonValues(1, CardType.ATTACK, CardTarget.ENEMY, cardStrings.EXTENDED_DESCRIPTION[0]);
-        this.baseMagicNumber = magicNumber = 8;
+        this.baseMagicNumber = magicNumber = MAGIC;
         this.baseDamage = damage = DAMAGE;
     }
 

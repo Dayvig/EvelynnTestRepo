@@ -48,11 +48,16 @@ public class CoolShadesPower extends Accessory {
 
     public void setShades(){
         int newStrVigor = StrengthAndVigor();
-        if (newStrVigor == 1 && prevStrengthAndVigor == 0){
-            addToBot(new ApplyPowerAction(this.owner, this.owner, new AllurePower(this.owner, this.amount), this.amount));
+        int baseAllureValue = 0;
+        if (this.owner.hasPower(AllurePower.POWER_ID)){
+            baseAllureValue += this.owner.getPower(AllurePower.POWER_ID).amount;
         }
-        if (newStrVigor == 0 && prevStrengthAndVigor == 1){
-            addToBot(new ReducePowerAction(this.owner, this.owner, this.owner.getPower(AllurePower.POWER_ID), this.amount));
+        baseAllureValue -= prevStrengthAndVigor;
+        if (owner.hasPower(AllurePower.POWER_ID)) {
+            owner.getPower(AllurePower.POWER_ID).amount = baseAllureValue + newStrVigor;
+        }
+        else {
+            addToBot(new ApplyPowerAction(this.owner, this.owner, new AllurePower(this.owner, baseAllureValue + newStrVigor), baseAllureValue + newStrVigor));
         }
         prevStrengthAndVigor = newStrVigor;
     }

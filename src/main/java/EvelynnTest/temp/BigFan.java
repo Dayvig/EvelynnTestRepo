@@ -1,8 +1,9 @@
-package EvelynnTest.cards;
+package EvelynnTest.temp;
 
 import EvelynnTest.EvelynnTestMod;
 import EvelynnTest.actions.BetterSummonAction;
 import EvelynnTest.actions.BetterSummonGremlinAction;
+import EvelynnTest.cards.AbstractEasyCard;
 import EvelynnTest.powers.FriendlyMonsterPower;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;

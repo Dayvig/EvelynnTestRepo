@@ -17,6 +17,7 @@ public class Fervor extends AbstractEasyCard {
 
     public static final int DAMAGE = 6;
     public static final int UPG_DAMAGE = 3;
+    public static final int UPG_MAGIC = 1;
     public static final int MAGIC = 2;
 
     public Fervor() {
@@ -33,6 +34,7 @@ public class Fervor extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeMagicNumber(UPG_DAMAGE);
+        upgradeDamage(UPG_DAMAGE);
+        upgradeMagicNumber(UPG_MAGIC);
     }
 }

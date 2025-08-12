@@ -183,12 +183,12 @@
     ]
   },
   "${ModID}:SeduceDebilitate": {
-    "NAME": "Seduce",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL Remove all Vulnerable from an enemy and and apply !M! evelynntestmod:Mega-Vulnerable for every 5 stacks removed.",
+    "NAME": "Seductress",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL Enemies with 5 or more Vulnerable take !M!% more damage.",
     "EXTENDED_DESCRIPTION": [
-      "Debilitate",
-      "evelynntestmod:Shifting. NL Remove all Weak from an enemy and and apply !M! evelynntestmod:Mega_Weak for every 5 stacks removed.",
-      "evelynntestmod:Shifting. NL Remove all Weak from an enemy and and apply !M! evelynntestmod:Mega_Weak for every 5 stacks removed."
+      "Dominatrix",
+      "evelynntestmod:Shifting. NL Enemies with 5 or more Weak deal !${ModID}:m2!% less damage.",
+      "evelynntestmod:Shifting. NL Enemies with 5 or more Weak deal !${ModID}:m2!% less damage."
     ]
   },
   "${ModID}:TeaseRake": {
@@ -225,7 +225,7 @@
   },
   "${ModID}:SenseWeakness": {
     "NAME": "Threaten",
-    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy intends to attack, apply !${ModID}:m2! Vulnerable to it.",
+    "DESCRIPTION": "evelynntestmod:Shifting. NL If the enemy intends to attack, apply !${ModID}:m2! Vulnerable to it and Fetch an Attack from your draw pile.",
     "EXTENDED_DESCRIPTION": [
       "Play Nice",
       "evelynntestmod:Shifting. NL Apply !M! evelynntestmod:Charm for each Attack played this turn.",
@@ -250,8 +250,8 @@
   },
   "${ModID}:Playtime": {
     "NAME": "Playtime is Over",
-    "DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL ALL enemies lose !M! HP for each evelynntestmod:Charm and remove their Charm. NL Exhaust.",
-    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL ALL enemies lose !M! HP for each evelynntestmod:Charm and remove their Charm. NL Exhaust."
+    "DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL Gain 1 Strength for each !M! evelynntestmod:Charm on enemies. NL All enemies lose their evelynntestmod:Charm. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Enter evelynntestmod:Demon\u00a0Shade. NL Gain 1 Strength for each !M! evelynntestmod:Charm on enemies. NL All enemies lose their evelynntestmod:Charm. NL Exhaust."
   },
   "${ModID}:SpikedCollar": {
     "NAME": "Spiked Collar",
@@ -407,7 +407,7 @@
   },
   "${ModID}:Heartbreaker": {
     "NAME": "Heartbreaker",
-    "DESCRIPTION": "Deal !D! Damage. NL If the enemy is ${ModID}:Infatuated, deal damage equal to half it's current HP instead (if higher.)",
+    "DESCRIPTION": "Deal damage equal to half of an enemy's ${ModID}:Charm.",
     "EXTENDED_DESCRIPTION": [
       " NL ( ",
       " Damage.)"
@@ -435,8 +435,8 @@
   },
   "${ModID}:SuccubusForm": {
     "NAME": "Succubus Form",
-    "DESCRIPTION": "Ethereal. NL When an enemy loses ${ModID}:Charm apply 2 ${ModID}:Charm to them. NL You cannot lose Vigor.",
-    "UPGRADE_DESCRIPTION": "When an enemy loses ${ModID}:Charm apply 2 ${ModID}:Charm to them. NL You cannot lose Vigor."
+    "DESCRIPTION": "Ethereal. NL Gain !M! ${ModID}:Allure. NL You cannot lose Vigor.",
+    "UPGRADE_DESCRIPTION": "Gain !M! ${ModID}:Allure. NL You cannot lose Vigor."
   },
   "${ModID}:HotCold": {
     "NAME": "Hot and Cold",

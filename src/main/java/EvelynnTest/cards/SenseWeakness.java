@@ -2,6 +2,7 @@ package EvelynnTest.cards;
 
 import EvelynnTest.powers.AllurePower;
 import EvelynnTest.powers.CharmPower;
+import com.evacipated.cardcrawl.mod.stslib.actions.common.FetchAction;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,7 +25,7 @@ public class SenseWeakness extends AbstractShiftingCard {
     private static final String[] EXTENDED_DESCRIPTION = cardStrings.EXTENDED_DESCRIPTION;
     public static final int MAGIC2 = 3;
     public static final int UPG_MAGIC = 1;
-        public static final int MAGIC = 1;
+        public static final int MAGIC = 3;
 
     public SenseWeakness() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -50,6 +51,7 @@ public class SenseWeakness extends AbstractShiftingCard {
             public void update() {
                 if (abstractMonster != null && abstractMonster.getIntentBaseDmg() >= 0) {
                     this.addToBot(new ApplyPowerAction(abstractMonster, AbstractDungeon.player, new VulnerablePower(abstractMonster, secondMagic, false), secondMagic));
+                    this.addToBot(new FetchAction(abstractPlayer.drawPile, card -> (card.type.equals(CardType.ATTACK))));
                 } else {
                     AbstractDungeon.effectList.add(new ThoughtBubble(AbstractDungeon.player.dialogX, AbstractDungeon.player.dialogY, 3.0F, EXTENDED_DESCRIPTION[5], true));
                 }
@@ -99,5 +101,6 @@ public class SenseWeakness extends AbstractShiftingCard {
     public void upp() {
         super.upp();
         upgradeSecondMagic(UPG_MAGIC);
+        upgradeMagicNumber(UPG_MAGIC);
     }
 }

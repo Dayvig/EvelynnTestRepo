@@ -37,10 +37,6 @@ public class SuccubusPatches {
                 AbstractPower toRemove = ReflectionHacks.getPrivate(__instance, ReducePowerAction.class, "powerInstance");
                 toRemoveID = toRemove.ID;
             }
-            if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID) && toRemoveID.equals(CharmPower.POWER_ID) && !__instance.target.equals(AbstractDungeon.player)){
-                __instance.isDone = true;
-                return SpireReturn.Return();
-            }
             if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID) && toRemoveID.equals(VigorPower.POWER_ID) && __instance.target.equals(AbstractDungeon.player)){
                 __instance.isDone = true;
                 return SpireReturn.Return();
@@ -66,10 +62,6 @@ public class SuccubusPatches {
                 AbstractPower toRemove = ReflectionHacks.getPrivate(__instance, RemoveSpecificPowerAction.class, "powerInstance");
                 toRemoveID = toRemove.ID;
             }
-            if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID) && toRemoveID.equals(CharmPower.POWER_ID) && !__instance.target.equals(AbstractDungeon.player)){
-                __instance.isDone = true;
-                return SpireReturn.Return();
-            }
             if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID) && toRemoveID.equals(VigorPower.POWER_ID) && __instance.target.equals(AbstractDungeon.player)){
                 __instance.isDone = true;
                 return SpireReturn.Return();
@@ -88,10 +80,6 @@ public class SuccubusPatches {
         public static SpireReturn<Void> Prefix(ApplyPowerAction __instance) {
             if (__instance.amount < 0) {
                 AbstractPower toRemove = (ReflectionHacks.getPrivate(__instance, ApplyPowerAction.class, "powerToApply"));
-                if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID) && toRemove.ID.equals(CharmPower.POWER_ID) && !__instance.target.equals(AbstractDungeon.player)) {
-                    __instance.isDone = true;
-                    return SpireReturn.Return();
-                }
                 if (AbstractDungeon.player.hasPower(SuccubusPower.POWER_ID) && toRemove.ID.equals(VigorPower.POWER_ID) && __instance.target.equals(AbstractDungeon.player)) {
                     __instance.isDone = true;
                     return SpireReturn.Return();

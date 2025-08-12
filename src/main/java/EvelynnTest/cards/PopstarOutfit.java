@@ -15,8 +15,8 @@ public class PopstarOutfit extends AbstractEasyCard {
 
     public final static String ID = makeID("PopstarOutfit");
 
-    private static final int MAGIC = 1;
-    private static final int UPGRADED_COST = 1;
+    private static final int MAGIC = 3;
+    private static final int UPG_MAGIC = 1;
 
     public PopstarOutfit() {
         super(ID, 2, CardType.POWER, CardRarity.RARE, CardTarget.SELF);
@@ -29,6 +29,6 @@ public class PopstarOutfit extends AbstractEasyCard {
     }
 
     public void upp() {
-        upgradeBaseCost(UPGRADED_COST);
+        upgradeMagicNumber(UPG_MAGIC);
     }
 }

@@ -16,7 +16,8 @@ public class FemmeFatale extends AbstractEasyCard {
 
     public final static String ID = makeID("FemmeFatale");
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 5;
+    private static final int UPG_MAGIC = 2;
     private static final int BLOCK = 10;
 
     public FemmeFatale() {
@@ -27,10 +28,11 @@ public class FemmeFatale extends AbstractEasyCard {
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {
-        addToBot(new ApplyPowerAction(p, p, new FemmeFatalePower(p, magicNumber, upgraded ? 20 : 10, this.makeStatEquivalentCopy()), magicNumber));
+        addToBot(new ApplyPowerAction(p, p, new FemmeFatalePower(p, magicNumber, block, this.makeStatEquivalentCopy()), magicNumber));
     }
 
     public void upp() {
         upgradeBlock(10);
+        upgradeMagicNumber(UPG_MAGIC);
     }
 }

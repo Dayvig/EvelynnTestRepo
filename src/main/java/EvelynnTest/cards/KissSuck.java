@@ -18,7 +18,7 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class KissSuck extends AbstractShiftingCard {
     public final static String ID = makeID("KissSuck");
-    public final static int MAGIC = 2;
+    public final static int MAGIC = 8;
     public final static int MAGIC2 = 8;
     public final static int UPG_MAGIC = 1;
     public final static int UPG_MAGIC2 = 2;
@@ -80,7 +80,7 @@ public class KissSuck extends AbstractShiftingCard {
 
     public void upp() {
         super.upp();
-        upgradeMagicNumber(UPG_MAGIC);
+        upgradeMagicNumber(UPG_MAGIC2);
         upgradeSecondMagic(UPG_MAGIC2);
         initializeDescription();
     }

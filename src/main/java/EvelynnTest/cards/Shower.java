@@ -21,8 +21,8 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 public class Shower extends AbstractEasyCard {
     public final static String ID = makeID("Shower");
 
-    public static final int MAGIC = 1;
-    public static final int UPG_MAGIC = 1;
+    public static final int MAGIC = 4;
+    public static final int UPG_MAGIC = 3;
 
     public Shower() {
         super(ID, 1, CardType.SKILL, CardRarity.UNCOMMON, CardTarget.ALL_ENEMY);

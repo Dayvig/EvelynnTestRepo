@@ -14,7 +14,7 @@ public class BusinessCasual extends AbstractEasyCard {
 
     public final static String ID = makeID("BusinessCasual");
 
-    private static final int MAGIC = 1;
+    private static final int MAGIC = 2;
 
     public BusinessCasual() {
         super(ID, 1, CardType.POWER, CardRarity.UNCOMMON, CardTarget.SELF);
@@ -30,6 +30,7 @@ public class BusinessCasual extends AbstractEasyCard {
     }
 
     public void upp() {
-
+        this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+        initializeDescription();
     }
 }

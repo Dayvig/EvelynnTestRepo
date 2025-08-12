@@ -17,7 +17,6 @@ public class Heartbreaker extends AbstractEasyCard {
     public final static String ID = makeID("Heartbreaker");
 
     public static final int UPGRADED_COST = 2;
-    public static final int DAMAGE = 30;
 
     public Heartbreaker() {
         super(ID, 3, CardType.ATTACK, CardRarity.UNCOMMON, CardTarget.ENEMY);
@@ -25,24 +24,31 @@ public class Heartbreaker extends AbstractEasyCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         addToBot(new DamageAction(m, new DamageInfo(p, damage, DamageInfo.DamageType.NORMAL), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        this.baseDamage = damage = DAMAGE;
+        this.baseDamage = damage = 0;
+    }
+
+    @Override
+    public boolean canUse(AbstractPlayer p, AbstractMonster m) {
+        return (m.hasPower(CharmPower.POWER_ID));
     }
 
     @Override
     public void applyPowers(){
         this.rawDescription = cardStrings.DESCRIPTION;
-        this.baseDamage = damage = DAMAGE;
+        this.baseDamage = damage = 0;
         initializeDescription();
     }
 
     @Override
     public void calculateCardDamage(AbstractMonster mo){
-        this.baseDamage = 30;
-        if (mo.hasPower(MindControlledPower.POWER_ID) && (mo.currentHealth/2) > 30){
-            this.baseDamage = (mo.currentHealth/2);
+        if (mo.hasPower(CharmPower.POWER_ID)){
+            this.baseDamage = (mo.getPower(CharmPower.POWER_ID).amount/2);
+            super.calculateCardDamage(mo);
+            this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + damage + cardStrings.EXTENDED_DESCRIPTION[1];
         }
-        super.calculateCardDamage(mo);
-        this.rawDescription = cardStrings.DESCRIPTION + cardStrings.EXTENDED_DESCRIPTION[0] + damage + cardStrings.EXTENDED_DESCRIPTION[1];
+        else {
+            this.rawDescription = cardStrings.DESCRIPTION;
+        }
         initializeDescription();
     }
 

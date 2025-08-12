@@ -1,4 +1,4 @@
-/*package EvelynnTest.patches;
+package EvelynnTest.patches;
 
 import EvelynnTest.cards.SadoMasochism;
 import EvelynnTest.powers.AllurePower;
@@ -33,4 +33,4 @@ public static class SadisticOnAttackPatch {
             }
         }
     }
-}*/
+}

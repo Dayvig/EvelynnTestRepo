@@ -23,7 +23,7 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class PullHold extends AbstractShiftingCard {
     public final static String ID = makeID("PullHold");
-    public final static int MAGIC = 2;
+    public final static int MAGIC = 8;
     public final static int MAGIC2 = 4;
     public final static int MAGIC3 = 8;
     public final static int UPG_MAGIC = 2;
@@ -93,6 +93,7 @@ public class PullHold extends AbstractShiftingCard {
 
     public void upp() {
         super.upp();
+        upgradeMagicNumber(UPG_MAGIC);
         upgradeSecondMagic(UPG_MAGIC);
         upgradeThirdMagic(UPG_MAGIC);
         initializeDescription();

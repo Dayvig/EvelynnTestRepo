@@ -38,7 +38,7 @@
       "charm",
       "charmed"
     ],
-    "DESCRIPTION": "When dealt attack damage, remove all Charm and gain 1 Weak and Vulnerable for each. If 5 or more was removed, become #yInfatuated and fight for Evelynn for one turn."
+    "DESCRIPTION": "Doubles at the start of your turn. If an enemy's Charm meets or exceeds their current HP, it becomes Infatuated: losing all Charm, gaining 2 Vulnerable and becoming stunned for 1 turn."
   },
   {
     "PROPER_NAME": "Accessory",

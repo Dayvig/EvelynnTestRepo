@@ -16,8 +16,8 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class PainPleasure extends AbstractShiftingCard {
     public final static String ID = makeID("PainPleasure");
-    public final static int MAGIC = 2;
-    public final static int UPG_MAGIC = 1;
+    public final static int MAGIC = 14;
+    public final static int UPG_MAGIC = 2;
     public final static int DAMAGE = 14;
     public final static int UPG_DAMAGE = 2;
     public final static int BLOCK = 14;

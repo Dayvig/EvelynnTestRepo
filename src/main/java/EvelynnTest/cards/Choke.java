@@ -48,12 +48,13 @@ public class Choke extends AbstractShiftingCard {
 
     @Override
     public void useDemon(AbstractPlayer abstractPlayer, AbstractMonster abstractMonster) {
+        AbstractCard thisCard = this;
         addToBot(new AbstractGameAction() {
             @Override
             public void update() {
                 boolean playedAttack = false;
                 for (AbstractCard c : AbstractDungeon.actionManager.cardsPlayedThisTurn) {
-                    if (c.type.equals(CardType.ATTACK)) {
+                    if (c.type.equals(CardType.ATTACK) && !c.equals(thisCard)) {
                         playedAttack = true;
                         break;
                     }

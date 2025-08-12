@@ -19,7 +19,7 @@ import static EvelynnTest.EvelynnTestMod.makeID;
 
 public class FlirtWatch extends AbstractShiftingCard {
     public final static String ID = makeID("FlirtWatch");
-    public final static int MAGIC = 2;
+    public final static int MAGIC = 6;
     public final static int SECONDMAGIC = 2;
 
     public final static int UPG_MAGIC1 = 1;
@@ -76,7 +76,7 @@ public class FlirtWatch extends AbstractShiftingCard {
 
     public void upp() {
         super.upp();
-        upgradeMagicNumber(UPG_MAGIC1);
+        upgradeMagicNumber(UPG_MAGIC2);
         upgradeSecondMagic(UPG_MAGIC2);
         upgradeBlock(UPG_MAGIC2);
         initializeDescription();
